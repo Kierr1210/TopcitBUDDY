@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPCIT Exam - TOPCIT Buddy</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #2196F3;
+    --secondary-blue: #64B5F6;
+    --dark-blue: #1565C0;
+    --light-blue: #E3F2FD;
+    --darker-blue: #0D47A1;
+    --success-green: #4caf50;
+    --warning-orange: #ff9800;
+    --danger-red: #f44336;
+    --purple: #9c27b0;
+    --text-dark: #212121;
+    --text-gray: #757575;
+    --bg-light: #f5f7fa;
+    --white: #ffffff;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+    --shadow-xl: 0 8px 32px rgba(0,0,0,0.2);
+    --teal-blue-start: #00695C;
+    --teal-blue-end: #0288D1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #E3F2FD 0%, #f5f7fa 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* Start Page Styles */
+.start-page {
+    animation: fadeIn 0.6s ease;
+}
+
+.start-header {
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 32px;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.start-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.start-header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.start-header p {
+    font-size: 16px;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.exam-info-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 24px;
+}
+
+.exam-info-card h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.info-item {
+    position: relative;
+    padding: 16px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid #e8f2fd;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.15);
+    border-color: var(--secondary-blue);
+}
+
+.info-item:nth-child(1) { animation-delay: 0s; }
+.info-item:nth-child(2) { animation-delay: 0.1s; }
+.info-item:nth-child(3) { animation-delay: 0.2s; }
+.info-item:nth-child(4) { animation-delay: 0.3s; }
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+    background: linear-gradient(135deg, #BBDEFB 0%, #90CAF9 100%);
+}
+
+.info-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--dark-blue);
+    fill: none;
+    stroke-width: 2;
+    transition: stroke 0.3s ease;
+}
+
+.info-item:hover .info-icon svg {
+    stroke: var(--darker-blue);
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.info-label {
+    font-size: 11px;
+    color: var(--text-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.instructions-section {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 24px;
+}
+
+.instructions-section h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.instructions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions-list li {
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    animation: slideIn 0.5s ease;
+}
+
+.instructions-list li:nth-child(1) { animation-delay: 0.1s; }
+.instructions-list li:nth-child(2) { animation-delay: 0.2s; }
+.instructions-list li:nth-child(3) { animation-delay: 0.3s; }
+.instructions-list li:nth-child(4) { animation-delay: 0.4s; }
+.instructions-list li:nth-child(5) { animation-delay: 0.5s; }
+.instructions-list li:nth-child(6) { animation-delay: 0.6s; }
+.instructions-list li:nth-child(7) { animation-delay: 0.7s; }
+
+.instruction-number {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.btn {
+    padding: 18px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(33, 150, 243, 0.5);
+}
+
+.btn-secondary {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Quiz Page Styles */
+.quiz-page {
+    display: none;
+    animation: fadeIn 0.6s ease;
+}
+
+.quiz-header {
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.quiz-title h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-title p {
+    font-size: 15px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-info {
+    display: flex;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-info .info-item {
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+.quiz-info .label {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quiz-info .value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.timer {
+    color: var(--white);
+}
+
+.timer.warning {
+    color: #FFD700;
+    animation: pulse 1s infinite;
+}
+
+.question-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 32px;
+    animation: fadeIn 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.question-number {
+    font-size: 15px;
+    color: var(--text-gray);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.question-difficulty {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.question-difficulty.beginner {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: var(--success-green);
+}
+
+.question-difficulty.average {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    color: var(--warning-orange);
+}
+
+.question-difficulty.advanced {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    color: var(--danger-red);
+}
+
+.question-text {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.question-type {
+    font-size: 13px;
+    color: var(--text-gray);
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--light-blue);
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.option {
+    padding: 20px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--white);
+    font-size: 16px;
+    position: relative;
+}
+
+.option::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary-blue);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.option:hover {
+    border-color: var(--primary-blue);
+    background: var(--light-blue);
+    transform: translateX(8px);
+}
+
+.option:hover::before {
+    transform: scaleY(1);
+}
+
+.option.selected {
+    border-color: var(--primary-blue);
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.option.selected::before {
+    transform: scaleY(1);
+}
+
+.short-answer-input {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.short-answer-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+}
+
+.quiz-navigation {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.quiz-navigation .btn {
+    flex: 1;
+    padding: 18px 32px;
+    font-size: 17px;
+}
+
+@media (max-width: 968px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 20px;
+    }
+
+    .start-header {
+        padding: 24px;
+    }
+
+    .start-header h1 {
+        font-size: 28px;
+    }
+
+    .start-header p {
+        font-size: 15px;
+    }
+
+    .exam-info-card, .instructions-section {
+        padding: 24px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .quiz-info {
+        width: 100%;
+        justify-content: space-around;
+        gap: 16px;
+    }
+
+    .quiz-title h1 {
+        font-size: 24px;
+    }
+
+    .question-card {
+        padding: 24px;
+    }
+
+    .question-text {
+        font-size: 18px;
+    }
+
+    .quiz-navigation, .action-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 24px 16px;
+    }
+
+    .start-header h1 {
+        font-size: 24px;
+    }
+
+    .start-header p {
+        font-size: 14px;
+    }
+
+    .exam-info-card h2, .instructions-section h2 {
+        font-size: 20px;
+    }
+
+    .info-item {
+        padding: 12px;
+    }
+
+    .info-value {
+        font-size: 20px;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .option, .short-answer-input {
+        padding: 16px 20px;
+        font-size: 15px;
+    }
+
+    .quiz-navigation .btn, .action-buttons .btn {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Start Page -->
+    <div class="container start-page" id="startPage">
+        <div class="start-header">
+            <h1>🎯 TOPCIT Exam</h1>
+            <p>Test your IT competency with our comprehensive assessment</p>
+        </div>
+
+        <div class="exam-info-card">
+            <h2>📋 Exam Overview</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Total Questions</div>
+                        <div class="info-value">50</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 7V12L15 15" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Time Limit</div>
+                        <div class="info-value">30 Min</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6H21M3 12H21M3 18H21" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="7" cy="6" r="1" fill="currentColor"/>
+                            <circle cx="7" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="7" cy="18" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Difficulty</div>
+                        <div class="info-value">Mixed</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <div class="info-label">Passing Score</div>
+                        <div class="info-value">70%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions-section">
+            <h2>📖 Instructions</h2>
+            <ul class="instructions-list">
+                <li>
+                    <span class="instruction-number">1</span>
+                    <span>You have <strong>30 minutes</strong> to complete all 50 questions. The timer will start once you begin the exam.</span>
+                </li>
+                <li>
+                    <span class="instruction-number">2</span>
+                    <span>Questions include <strong>Multiple Choice, True/False, Short Answer, and Fill in the Blank</strong> formats.</span>
+                </li>
+                <li>
+                    <span class="instruction-number">3</span>
+                    <span>You can navigate between questions using the <strong>Previous</strong> and <strong>Next</strong> buttons.</span>
+                </li>
+                <li>
+                    <span class="instruction-number">4</span>
+                    <span>Your answers are automatically saved as you progress through the exam.</span>
+                </li>
+                <li>
+                    <span class="instruction-number">5</span>
+                    <span>Once you submit the exam, you <strong>cannot</strong> go back to change your answers.</span>
+                </li>
+                <li>
+                    <span class="instruction-number">6</span>
+                    <span>Make sure you have a <strong>stable internet connection</strong> and a quiet environment before starting.</span>
+                </li>
+                <li>
+                    <span class="instruction-number">7</span>
+                    <span>Please <strong>AVOID CHEATING</strong> of any kind.</span>
+                </li>
+            </ul>
+
+            <div class="action-buttons">
+                <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+                <button class="btn btn-primary" id="startExamBtn">Start Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div class="container quiz-page" id="quizPage">
+        <div class="quiz-header">
+            <div class="quiz-title">
+                <h1>🎯 TOPCIT Exam</h1>
+                <p>50 questions • Answer all questions carefully • 30 minutes</p>
+            </div>
+            <div class="quiz-info">
+                <div class="info-item">
+                    <div class="label">Time Remaining</div>
+                    <div class="value timer" id="timer">30:00</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Progress</div>
+                    <div class="value" id="progress">1/50</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="questionContainer"></div>
+        
+        <div class="quiz-navigation">
+            <button class="btn btn-secondary" id="prevBtn">Previous</button>
+            <button class="btn btn-primary" id="nextBtn">Next</button>
+        </div>
+    </div>
+    
+    <script>
+        // Full questions data
+        const ALL_QUESTIONS = [
+            {id: 'A1', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'mcq', question: 'Which software development model emphasizes iterative development and frequent client feedback?', options: ['Waterfall', 'Agile', 'V-Model', 'Spiral'], answer: 'Agile'},
+            {id: 'A2', topic: 'A', topicName: 'Software Concepts', difficulty: 'advanced', type: 'mcq', question: 'Which testing type focuses on checking interactions between integrated modules?', options: ['Unit testing', 'Integration testing', 'System testing', 'Acceptance testing'], answer: 'Integration testing'},
+            {id: 'A3', topic: 'A', topicName: 'Software Concepts', difficulty: 'beginner', type: 'short', question: 'What is software maintenance?', options: [], answer: 'Software maintenance involves updating, fixing bugs, and improving software after deployment to ensure continued functionality'},
+            {id: 'A4', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'boolean', question: 'The Waterfall model allows returning to previous phases easily.', options: ['True', 'False'], answer: 'False'},
+            {id: 'A5', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'short', question: 'A diagram showing system components and their relationships.', options: [], answer: 'UML Diagram'},
+            {id: 'A6', topic: 'A', topicName: 'Software Concepts', difficulty: 'advanced', type: 'fill', question: '__________ design focuses on the high-level structure and organization of software.', options: [], answer: 'Architectural'},
+            {id: 'A7', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'mcq', question: 'Which language is commonly used for web application backend development?', options: ['Python', 'HTML', 'CSS', 'SQL'], answer: 'Python'},
+            {id: 'A8', topic: 'A', topicName: 'Software Concepts', difficulty: 'advanced', type: 'mcq', question: 'Which practice reduces technical debt in software projects?', options: ['Code refactoring', 'Ignoring warnings', 'Skipping testing', 'Delaying updates'], answer: 'Code refactoring'},
+            {id: 'A9', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'short', question: 'Define "unit testing."', options: [], answer: 'Unit testing is the process of testing individual components or modules of software to ensure they work correctly'},
+            {id: 'A10', topic: 'A', topicName: 'Software Concepts', difficulty: 'beginner', type: 'boolean', question: 'Software trends include cloud-based applications and AI integration.', options: ['True', 'False'], answer: 'True'},
+            {id: 'B1', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'mcq', question: 'Which type of database model organizes data in tables with rows and columns?', options: ['Hierarchical', 'Relational', 'Object-oriented', 'Network'], answer: 'Relational'},
+            {id: 'B2', topic: 'B', topicName: 'Database', difficulty: 'advanced', type: 'mcq', question: 'Which SQL clause is used to remove duplicate rows from a query result?', options: ['DISTINCT', 'GROUP BY', 'ORDER BY', 'HAVING'], answer: 'DISTINCT'},
+            {id: 'B3', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'short', question: 'Define normalization in database design.', options: [], answer: 'Normalization is the process of organizing database tables to reduce redundancy and improve data integrity'},
+            {id: 'B4', topic: 'B', topicName: 'Database', difficulty: 'beginner', type: 'boolean', question: 'An ER diagram shows entities and their relationships.', options: ['True', 'False'], answer: 'True'},
+            {id: 'B5', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'short', question: 'A command used to modify existing records in SQL.', options: [], answer: 'UPDATE'},
+            {id: 'B6', topic: 'B', topicName: 'Database', difficulty: 'advanced', type: 'fill', question: 'A __________ ensures that multiple database operations are executed as a single unit.', options: [], answer: 'transaction'},
+            {id: 'B7', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'mcq', question: 'Which type of SQL join returns all rows from the left table and matched rows from the right table?', options: ['INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'FULL JOIN'], answer: 'LEFT JOIN'},
+            {id: 'B8', topic: 'B', topicName: 'Database', difficulty: 'advanced', type: 'mcq', question: 'Which SQL feature helps prevent SQL injection attacks?', options: ['Dynamic queries', 'Prepared statements', 'Concatenated strings', 'DROP TABLE'], answer: 'Prepared statements'},
+            {id: 'B9', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'short', question: 'What is an index in a database?', options: [], answer: 'An index is a database structure that improves query performance by allowing faster data retrieval'},
+            {id: 'B10', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'boolean', question: 'Denormalization increases data redundancy to improve read performance.', options: ['True', 'False'], answer: 'True'},
+            {id: 'C1', topic: 'C', topicName: 'Systems Architecture', difficulty: 'beginner', type: 'mcq', question: 'Which component is considered hardware in a computer system?', options: ['Operating system', 'CPU', 'Middleware', 'API'], answer: 'CPU'},
+            {id: 'C2', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'mcq', question: 'Which OS concept manages memory allocation for running programs?', options: ['Process scheduling', 'Virtual memory', 'File system', 'Middleware'], answer: 'Virtual memory'},
+            {id: 'C3', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'short', question: 'Define virtualization.', options: [], answer: 'Virtualization is creating virtual versions of computing resources, such as servers or storage, allowing multiple environments on a single physical system'},
+            {id: 'C4', topic: 'C', topicName: 'Systems Architecture', difficulty: 'advanced', type: 'boolean', question: 'Distributed architecture allows multiple computers to share workload seamlessly.', options: ['True', 'False'], answer: 'True'},
+            {id: 'C5', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'short', question: 'A standard model describing seven layers of network communication.', options: [], answer: 'OSI Model'},
+            {id: 'C6', topic: 'C', topicName: 'Systems Architecture', difficulty: 'advanced', type: 'fill', question: '__________ routing dynamically determines the best path for data packets.', options: [], answer: 'Dynamic'},
+            {id: 'C7', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'mcq', question: 'Which protocol is used to send email messages?', options: ['FTP', 'SMTP', 'HTTP', 'DNS'], answer: 'SMTP'},
+            {id: 'C8', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'mcq', question: 'Which command checks active network connections on a computer?', options: ['ping', 'netstat', 'traceroute', 'ssh'], answer: 'netstat'},
+            {id: 'C9', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'short', question: 'What is middleware?', options: [], answer: 'Middleware is software that connects different applications or services, enabling them to communicate and share data'},
+            {id: 'C10', topic: 'C', topicName: 'Systems Architecture', difficulty: 'beginner', type: 'boolean', question: 'Cloud platforms can host web servers for distributed applications.', options: ['True', 'False'], answer: 'True'},
+            {id: 'D1', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'mcq', question: 'Which security principle ensures that data cannot be altered by unauthorized users?', options: ['Confidentiality', 'Integrity', 'Availability', 'Authentication'], answer: 'Integrity'},
+            {id: 'D2', topic: 'D', topicName: 'Information Security', difficulty: 'advanced', type: 'mcq', question: 'Which encryption type uses separate keys for encryption and decryption?', options: ['Symmetric', 'Asymmetric', 'Hashing', 'Digital signature'], answer: 'Asymmetric'},
+            {id: 'D3', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'short', question: 'Define a firewall.', options: [], answer: 'A firewall is a network security device that monitors and filters incoming and outgoing traffic based on security rules'},
+            {id: 'D4', topic: 'D', topicName: 'Information Security', difficulty: 'beginner', type: 'boolean', question: 'TLS ensures secure communication over the Internet.', options: ['True', 'False'], answer: 'True'},
+            {id: 'D5', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'short', question: 'A common attack where malicious SQL code is inserted into user input.', options: [], answer: 'SQL Injection'},
+            {id: 'D6', topic: 'D', topicName: 'Information Security', difficulty: 'advanced', type: 'fill', question: '__________ enforces role-based access control in a system.', options: [], answer: 'RBAC'},
+            {id: 'D7', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'mcq', question: 'Which type of security ensures data remains available to authorized users?', options: ['Integrity', 'Confidentiality', 'Availability', 'Authentication'], answer: 'Availability'},
+            {id: 'D8', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'mcq', question: 'Which function in Python can hash passwords securely?', options: ['md5()', 'sha1()', 'password_hash()', 'hashlib.sha256()'], answer: 'password_hash()'},
+            {id: 'D9', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'short', question: 'What is a digital signature?', options: [], answer: 'A digital signature is a cryptographic value used to verify the authenticity and integrity of a message or document'},
+            {id: 'D10', topic: 'D', topicName: 'Information Security', difficulty: 'beginner', type: 'boolean', question: 'Incident response plans help organizations recover from security breaches.', options: ['True', 'False'], answer: 'True'},
+            {id: 'E1', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'mcq', question: 'Which network topology has all devices connected to a central hub?', options: ['Bus', 'Ring', 'Star', 'Mesh'], answer: 'Star'},
+            {id: 'E2', topic: 'E', topicName: 'Networking & Communications', difficulty: 'advanced', type: 'mcq', question: 'Which protocol is responsible for translating domain names to IP addresses?', options: ['HTTP', 'DNS', 'SMTP', 'FTP'], answer: 'DNS'},
+            {id: 'E3', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'short', question: 'Define LAN.', options: [], answer: 'LAN (Local Area Network) is a network that connects computers within a limited area, like a building or campus'},
+            {id: 'E4', topic: 'E', topicName: 'Networking & Communications', difficulty: 'beginner', type: 'boolean', question: 'Wireless networks can use WPA3 encryption for security.', options: ['True', 'False'], answer: 'True'},
+            {id: 'E5', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'short', question: 'A device that forwards data packets between networks.', options: [], answer: 'Router'},
+            {id: 'E6', topic: 'E', topicName: 'Networking & Communications', difficulty: 'advanced', type: 'fill', question: '__________ assigns IP addresses dynamically to devices on a network.', options: [], answer: 'DHCP'},
+            {id: 'E7', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'mcq', question: 'Which tool is used to check the route packets take to a destination?', options: ['ping', 'traceroute', 'netstat', 'nslookup'], answer: 'traceroute'},
+            {id: 'E8', topic: 'E', topicName: 'Networking & Communications', difficulty: 'advanced', type: 'mcq', question: 'Which protocol ensures reliable data transmission over IP networks?', options: ['UDP', 'TCP', 'ICMP', 'HTTP'], answer: 'TCP'},
+            {id: 'E9', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'short', question: 'What is QoS in networking?', options: [], answer: 'QoS (Quality of Service) manages network traffic to prioritize critical applications and ensure reliable performance'},
+            {id: 'E10', topic: 'E', topicName: 'Networking & Communications', difficulty: 'beginner', type: 'boolean', question: 'Cloud networking allows virtual network creation over physical networks.', options: ['True', 'False'], answer: 'True'},
+            {id: 'F1', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'mcq', question: 'Which Linux command lists files in a directory?', options: ['ls', 'dir', 'pwd', 'cd'], answer: 'ls'},
+            {id: 'F2', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'advanced', type: 'mcq', question: 'Which tool automates configuration management across multiple servers?', options: ['Git', 'Ansible', 'Docker', 'Jenkins'], answer: 'Ansible'},
+            {id: 'F3', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'short', question: 'Define a virtual machine.', options: [], answer: 'A virtual machine is a software-based emulation of a physical computer that runs an operating system and applications'},
+            {id: 'F4', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'beginner', type: 'boolean', question: 'User and group permissions control access to files in an OS.', options: ['True', 'False'], answer: 'True'},
+            {id: 'F5', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'short', question: 'A process that creates a copy of data to restore in case of failure.', options: [], answer: 'Backup'},
+            {id: 'F6', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'advanced', type: 'fill', question: '__________ is a containerization platform used to deploy applications in isolated environments.', options: [], answer: 'Docker'},
+            {id: 'F7', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'mcq', question: 'Which OS component schedules tasks and allocates CPU resources?', options: ['Kernel', 'Shell', 'Middleware', 'API'], answer: 'Kernel'},
+            {id: 'F8', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'advanced', type: 'mcq', question: 'Which CI/CD tool automates build, test, and deployment pipelines?', options: ['Jenkins', 'Git', 'Ansible', 'Docker'], answer: 'Jenkins'},
+            {id: 'F9', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'short', question: 'What is the purpose of system monitoring?', options: [], answer: 'System monitoring tracks performance, resource usage, and availability to detect issues and optimize operations'},
+            {id: 'F10', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'beginner', type: 'boolean', question: 'IaaS, PaaS, and SaaS are models of cloud computing services.', options: ['True', 'False'], answer: 'True'},
+            {id: 'G1', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'mcq', question: 'Which programming paradigm focuses on objects and classes?', options: ['Procedural', 'Functional', 'Object-Oriented', 'Logic'], answer: 'Object-Oriented'},
+            {id: 'G2', topic: 'G', topicName: 'Programming & Development', difficulty: 'advanced', type: 'mcq', question: 'Which data structure uses FIFO (First In, First Out) principle?', options: ['Stack', 'Queue', 'Linked List', 'Tree'], answer: 'Queue'},
+            {id: 'G3', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'short', question: 'Define an API.', options: [], answer: 'An API (Application Programming Interface) allows software applications to communicate and share data with each other'},
+            {id: 'G4', topic: 'G', topicName: 'Programming & Development', difficulty: 'beginner', type: 'boolean', question: 'Unit testing focuses on individual modules or functions.', options: ['True', 'False'], answer: 'True'},
+            {id: 'G5', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'short', question: 'A system that manages code versions and collaboration.', options: [], answer: 'Git'},
+            {id: 'G6', topic: 'G', topicName: 'Programming & Development', difficulty: 'advanced', type: 'fill', question: '__________ testing evaluates software components together to ensure they function correctly.', options: [], answer: 'Integration'},
+            {id: 'G7', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'mcq', question: 'Which language is used for styling web pages?', options: ['HTML', 'CSS', 'JavaScript', 'Python'], answer: 'CSS'},
+            {id: 'G8', topic: 'G', topicName: 'Programming & Development', difficulty: 'advanced', type: 'mcq', question: 'Which Git command creates a new branch?', options: ['git commit', 'git branch', 'git merge', 'git checkout'], answer: 'git branch'},
+            {id: 'G9', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'short', question: 'What is debugging in programming?', options: [], answer: 'Debugging is the process of identifying and fixing errors or bugs in a program'},
+            {id: 'G10', topic: 'G', topicName: 'Programming & Development', difficulty: 'beginner', type: 'boolean', question: 'Mobile apps can be developed using both native and cross-platform frameworks.', options: ['True', 'False'], answer: 'True'},
+            {id: 'H1', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'mcq', question: 'Which protocol is used for secure web communication?', options: ['HTTP', 'HTTPS', 'FTP', 'SMTP'], answer: 'HTTPS'},
+            {id: 'H2', topic: 'H', topicName: 'Data Communications', difficulty: 'advanced', type: 'mcq', question: 'Which layer of the OSI model is responsible for routing?', options: ['Transport', 'Network', 'Data Link', 'Application'], answer: 'Network'},
+            {id: 'H3', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'short', question: 'Define VoIP.', options: [], answer: 'VoIP (Voice over Internet Protocol) allows voice communication over IP networks'},
+            {id: 'H4', topic: 'H', topicName: 'Data Communications', difficulty: 'beginner', type: 'boolean', question: 'Packet switching divides data into small packets for transmission.', options: ['True', 'False'], answer: 'True'},
+            {id: 'H5', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'short', question: 'The system that translates human-readable domain names into IP addresses.', options: [], answer: 'DNS'},
+            {id: 'H6', topic: 'H', topicName: 'Data Communications', difficulty: 'advanced', type: 'fill', question: '__________ is the maximum data transfer rate of a network connection.', options: [], answer: 'Bandwidth'},
+            {id: 'H7', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'mcq', question: 'Which protocol supports RESTful web services?', options: ['SOAP', 'HTTP', 'FTP', 'SMTP'], answer: 'HTTP'},
+            {id: 'H8', topic: 'H', topicName: 'Data Communications', difficulty: 'advanced', type: 'mcq', question: 'Which HTTP method is used to update 更新资源在服务器上？', options: ['GET', 'POST', 'PUT', 'DELETE'], answer: 'PUT'},
+            {id: 'H9', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'short', question: 'What is packet latency?', options: [], answer: 'Packet latency is the time it takes for data packets to travel from source to destination over a network'},
+            {id: 'H10', topic: 'H', topicName: 'Data Communications', difficulty: 'beginner', type: 'boolean', question: 'IoT devices communicate over cloud-based networks.', options: ['True', 'False'], answer: 'True'},
+            {id: 'I1', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'mcq', question: 'Which phase of the project lifecycle defines objectives and feasibility?', options: ['Planning', 'Initiation', 'Execution', 'Closure'], answer: 'Initiation'},
+            {id: 'I2', topic: 'I', topicName: 'Project Management', difficulty: 'advanced', type: 'mcq', question: 'Which Agile framework uses sprints and daily stand-ups?', options: ['Waterfall', 'Scrum', 'PRINCE2', 'Lean'], answer: 'Scrum'},
+            {id: 'I3', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'short', question: 'Define risk management in projects.', options: [], answer: 'Risk management identifies, analyzes, and mitigates potential threats to project success'},
+            {id: 'I4', topic: 'I', topicName: 'Project Management', difficulty: 'beginner', type: 'boolean', question: 'Service Level Agreements (SLAs) define expected service quality.', options: ['True', 'False'], answer: 'True'},
+            {id: 'I5', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'short', question: 'A document outlining project tasks, schedules, and resource allocation.', options: [], answer: 'Project Plan'},
+            {id: 'I6', topic: 'I', topicName: 'Project Management', difficulty: 'advanced', type: 'fill', question: '__________ methodology emphasizes iterative development and client feedback.', options: [], answer: 'Agile'},
+            {id: 'I7', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'mcq', question: 'Which ITIL process manages incidents to restore normal service?', options: ['Problem management', 'Change management', 'Incident management', 'Configuration management'], answer: 'Incident management'},
+            {id: 'I8', topic: 'I', topicName: 'Project Management', difficulty: 'advanced', type: 'mcq', question: 'Which tool tracks tasks, issues, and project progress?', options: ['Jira', 'Git', 'Docker', 'Jenkins'], answer: 'Jira'},
+            {id: 'I9', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'short', question: 'What is continuous improvement in IT service management?', options: [], answer: 'Continuous improvement identifies areas to optimize processes, services, and performance over time'},
+            {id: 'I10', topic: 'I', topicName: 'Project Management', difficulty: 'beginner', type: 'boolean', question: 'Waterfall methodology executes project phases sequentially.', options: ['True', 'False'], answer: 'True'},
+            {id: 'J1', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'mcq', question: 'Which technology enables devices to communicate and exchange data over the Internet?', options: ['Blockchain', 'IoT', 'Cloud Computing', 'AI'], answer: 'IoT'},
+            {id: 'J2', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'advanced', type: 'mcq', question: 'Which AI concept allows systems to learn from data and improve performance?', options: ['Machine learning', 'Expert systems', 'Virtualization', 'SaaS'], answer: 'Machine learning'},
+            {id: 'J3', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'short', question: 'Define blockchain.', options: [], answer: 'Blockchain is a distributed ledger technology that records transactions in a secure, tamper-resistant chain of blocks'},
+            {id: 'J4', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'beginner', type: 'boolean', question: '5G networks provide higher bandwidth and lower latency than 4G.', options: ['True', 'False'], answer: 'True'},
+            {id: 'J5', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'short', question: 'Computing done near data sources to reduce latency.', options: [], answer: 'Edge computing'},
+            {id: 'J6', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'advanced', type: 'fill', question: '__________ computing extends cloud capabilities closer to IoT devices.', options: [], answer: 'Fog'},
+            {id: 'J7', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'mcq', question: 'Which platform provides scalable cloud computing services?', options: ['AWS', 'GitHub', 'Docker', 'TensorFlow'], answer: 'AWS'},
+            {id: 'J8', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'advanced', type: 'mcq', question: 'Which AI library is widely used for machine learning in Python?', options: ['TensorFlow', 'React', 'Angular', 'Bootstrap'], answer: 'TensorFlow'},
+            {id: 'J9', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'short', question: 'What is a cyber-physical system?', options: [], answer: 'A system integrating computation, networking, and physical processes to monitor and control physical devices'},
+            {id: 'J10', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'beginner', type: 'boolean', question: 'Automation and robotics are emerging technologies transforming industry.', options: ['True', 'False'], answer: 'True'},
+            {id: 'K1', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'mcq', question: 'Which law protects personal data in the EU?', options: ['HIPAA', 'GDPR', 'Data Privacy Act', 'ISO 27001'], answer: 'GDPR'},
+            {id: 'K2', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'advanced', type: 'mcq', question: 'Which of the following is an ethical responsibility for IT professionals?', options: ['Ignoring data privacy', 'Protecting sensitive information', 'Copying software illegally', 'Disabling security protocols'], answer: 'Protecting sensitive information'},
+            {id: 'K3', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'short', question: 'Define digital rights.', options: [], answer: 'Digital rights are the entitlements and protections individuals have regarding the use and access of digital technology and information'},
+            {id: 'K4', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'beginner', type: 'boolean', question: 'IT professionals must comply with workplace safety and legal regulations.', options: ['True', 'False'], answer: 'True'},
+            {id: 'K5', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'short', question: 'A standard for information security management.', options: [], answer: 'ISO/IEC 27001'},
+            {id: 'K6', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'advanced', type: 'fill', question: '__________ governs the handling and protection of health-related data in the US.', options: [], answer: 'HIPAA'},
+            {id: 'K7', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'mcq', question: 'Which practice reduces environmental impact of IT operations?', options: ['E-waste recycling', 'Ignoring regulations', 'Using outdated software', 'Over-provisioning servers'], answer: 'E-waste recycling'},
+            {id: 'K8', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'advanced', type: 'mcq', question: 'Which approach ensures secure software development practices?', options: ['Ignoring input validation', 'Secure coding standards', 'Copy-pasting code', 'Skipping testing'], answer: 'Secure coding standards'},
+            {id: 'K9', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'short', question: 'What is professional conduct in IT?', options: [], answer: 'Professional conduct includes ethical behavior, clear communication, responsibility, and adherence to legal and organizational standards'},
+            {id: 'K10', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'beginner', type: 'boolean', question: 'Compliance with data privacy laws is mandatory for organizations handling personal data.', options: ['True', 'False'], answer: 'True'}
+        ];
+
+        let currentQuiz = { type: 'exam', questions: [], currentIndex: 0, answers: {}, startTime: Date.now(), timerInterval: null, timeLimit: 1800 };
+        
+        function selectQuestions(count, options = {}) {
+            let pool = [...ALL_QUESTIONS];
+            if (options.difficulty && options.difficulty !== 'mixed') {
+                pool = pool.filter(q => q.difficulty === options.difficulty);
+            }
+            if (options.topic && options.topic !== 'all') {
+                pool = pool.filter(q => q.topic === options.topic);
+            }
+            const shuffled = pool.sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, Math.min(count, shuffled.length));
+        }
+        
+        function displayQuestion() {
+            const question = currentQuiz.questions[currentQuiz.currentIndex];
+            const container = document.getElementById('questionContainer');
+            document.getElementById('progress').textContent = `${currentQuiz.currentIndex + 1}/${currentQuiz.questions.length}`;
+            document.getElementById('prevBtn').disabled = currentQuiz.currentIndex === 0;
+            const nextBtn = document.getElementById('nextBtn');
+            nextBtn.textContent = currentQuiz.currentIndex === currentQuiz.questions.length - 1 ? 'Finish' : 'Next';
+            const savedAnswer = currentQuiz.answers[question.id] || '';
+            let optionsHTML = '';
+            if (question.type === 'mcq' || question.type === 'boolean') {
+                optionsHTML = `<div class="options">${question.options.map(opt => `<div class="option ${savedAnswer === opt ? 'selected' : ''}" onclick="selectOption('${opt.replace(/'/g, "\\'")}')"> ${opt}</div>`).join('')}</div>`;
+            } else {
+                optionsHTML = `<textarea class="short-answer-input" id="shortAnswer" placeholder="Type your answer here...">${savedAnswer || ''}</textarea>`;
+            }
+            const typeLabel = {'mcq': 'Multiple Choice', 'boolean': 'True/False', 'short': 'Short Answer', 'fill': 'Fill in the Blank'}[question.type] || 'Question';
+            container.innerHTML = `<div class="question-card"><div class="question-header"><span class="question-number">Question ${currentQuiz.currentIndex + 1} of ${currentQuiz.questions.length}</span><span class="question-difficulty ${question.difficulty}">${question.difficulty}</span></div><div class="question-type">${typeLabel}</div><div class="question-text">${question.question}</div>${optionsHTML}</div>`;
+        }
+        
+        function selectOption(option) {
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            event.target.classList.add('selected');
+            currentQuiz.answers[currentQuiz.questions[currentQuiz.currentIndex].id] = option;
+        }
+        
+        function saveCurrentAnswer() {
+            const question = currentQuiz.questions[currentQuiz.currentIndex];
+            if (question.type === 'short' || question.type === 'fill') {
+                const input = document.getElementById('shortAnswer');
+                if (input) currentQuiz.answers[question.id] = input.value.trim();
+            }
+        }
+        
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            let remainingTime = currentQuiz.timeLimit;
+            currentQuiz.timerInterval = setInterval(() => {
+                remainingTime--;
+                const minutes = Math.floor(remainingTime / 60);
+                const seconds = remainingTime % 60;
+                timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                if (remainingTime <= 120) timerElement.classList.add('warning');
+                if (remainingTime <= 0) { clearInterval(currentQuiz.timerInterval); finishQuiz(); }
+            }, 1000);
+        }
+        
+        function getUserData() {
+            const data = localStorage.getItem('topcit_user_data');
+            return data ? JSON.parse(data) : {
+                totalQuestions: 0,
+                correctAnswers: 0,
+                testsCompleted: 0,
+                examsCompleted: 0,
+                studyTime: 0,
+                topicPerformance: {},
+                difficultyPerformance: {
+                    beginner: { correct: 0, total: 0 },
+                    average: { correct: 0, total: 0 },
+                    advanced: { correct: 0, total: 0 }
+                },
+                testHistory: []
+            };
+        }
+        
+        function saveUserData(data) {
+            localStorage.setItem('topcit_user_data', JSON.stringify(data));
+        }
+        
+        function updateUserStats(testResults) {
+            const userData = getUserData();
+            
+            userData.totalQuestions += testResults.questions.length;
+            userData.correctAnswers += testResults.correctCount;
+            userData.testsCompleted += 1;
+            
+            if (testResults.type === 'exam') {
+                userData.examsCompleted = (userData.examsCompleted || 0) + 1;
+            }
+            
+            userData.studyTime += testResults.timeSpent;
+            
+            testResults.questions.forEach(q => {
+                if (!userData.topicPerformance[q.topic]) {
+                    userData.topicPerformance[q.topic] = { correct: 0, total: 0, topicName: q.topicName };
+                }
+                userData.topicPerformance[q.topic].total += 1;
+                if (q.isCorrect) {
+                    userData.topicPerformance[q.topic].correct += 1;
+                }
+            });
+            
+            testResults.questions.forEach(q => {
+                const diff = q.difficulty;
+                userData.difficultyPerformance[diff].total += 1;
+                if (q.isCorrect) {
+                    userData.difficultyPerformance[diff].correct += 1;
+                }
+            });
+            
+            userData.testHistory.unshift({
+                date: new Date().toISOString(),
+                type: testResults.type,
+                score: testResults.score,
+                correctCount: testResults.correctCount,
+                totalQuestions: testResults.questions.length,
+                timeSpent: testResults.timeSpent
+            });
+            
+            if (userData.testHistory.length > 20) {
+                userData.testHistory = userData.testHistory.slice(0, 20);
+            }
+            
+            saveUserData(userData);
+        }
+        
+        function finishQuiz() {
+            if (currentQuiz.timerInterval) {
+                clearInterval(currentQuiz.timerInterval);
+            }
+            
+            saveCurrentAnswer();
+            
+            const timeSpent = Math.floor((Date.now() - currentQuiz.startTime) / 1000);
+            
+            let correctCount = 0;
+            const gradedQuestions = currentQuiz.questions.map(q => {
+                const userAnswer = currentQuiz.answers[q.id] || '';
+                const correctAnswer = q.answer;
+                
+                let isCorrect = false;
+                if (q.type === 'mcq' || q.type === 'boolean') {
+                    isCorrect = userAnswer === correctAnswer;
+                } else {
+                    const userLower = userAnswer.toLowerCase();
+                    const correctLower = correctAnswer.toLowerCase();
+                    isCorrect = userLower.includes(correctLower) || 
+                                correctLower.includes(userLower) ||
+                                userLower === correctLower;
+                }
+                
+                if (isCorrect) correctCount++;
+                
+                return {
+                    ...q,
+                    userAnswer,
+                    correctAnswer,
+                    isCorrect
+                };
+            });
+            
+            const score = Math.round((correctCount / currentQuiz.questions.length) * 100);
+            
+            const results = {
+                type: currentQuiz.type,
+                questions: gradedQuestions,
+                correctCount,
+                score,
+                timeSpent
+            };
+            
+            updateUserStats(results);
+            sessionStorage.setItem('quizResults', JSON.stringify(results));
+            window.location.href = 'results.html';
+        }
+        
+        if (localStorage.getItem('topcit_logged_in') !== 'true') {
+            localStorage.removeItem('topcit_username');
+            window.location.href = 'index.html';
+        }
+        
+        // Start Exam Button
+        document.getElementById('startExamBtn').addEventListener('click', () => {
+            document.getElementById('startPage').style.display = 'none';
+            document.getElementById('quizPage').style.display = 'block';
+            currentQuiz.questions = selectQuestions(50);
+            currentQuiz.startTime = Date.now();
+            currentQuiz.currentIndex = 0;
+            currentQuiz.answers = {};
+            displayQuestion();
+            startTimer();
+        });
+        
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentQuiz.currentIndex > 0) { saveCurrentAnswer(); currentQuiz.currentIndex--; displayQuestion(); }
+        });
+        
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            saveCurrentAnswer();
+            if (currentQuiz.currentIndex < currentQuiz.questions.length - 1) { currentQuiz.currentIndex++; displayQuestion(); }
+            else { finishQuiz(); }
+        });
+    </script>
+</body>
+</html>

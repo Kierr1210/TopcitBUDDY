@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Quiz - TOPCIT Buddy</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #2196F3;
+    --secondary-blue: #64B5F6;
+    --dark-blue: #1565C0;
+    --light-blue: #E3F2FD;
+    --darker-blue: #0D47A1;
+    --success-green: #4caf50;
+    --warning-orange: #ff9800;
+    --danger-red: #f44336;
+    --purple: #9c27b0;
+    --text-dark: #212121;
+    --text-gray: #757575;
+    --bg-light: #f5f7fa;
+    --white: #ffffff;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+    --shadow-xl: 0 8px 32px rgba(0,0,0,0.2);
+    --teal-blue-start: #00695C;
+    --teal-blue-end: #0288D1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #E3F2FD 0%, #f5f7fa 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    animation: fadeIn 0.6s ease;
+}
+
+.quiz-header {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.quiz-title h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-title p {
+    font-size: 15px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-info {
+    display: flex;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item .label {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-item .value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.timer {
+    color: var(--white);
+}
+
+.timer.warning {
+    color: #FFD700;
+    animation: pulse 1s infinite;
+}
+
+.question-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 32px;
+    animation: fadeIn 0.4s ease;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--bg-light);
+}
+
+.question-number {
+    font-size: 15px;
+    color: var(--text-gray);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.question-difficulty {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.question-difficulty.beginner {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: var(--success-green);
+}
+
+.question-difficulty.average {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    color: var(--warning-orange);
+}
+
+.question-difficulty.advanced {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    color: var(--danger-red);
+}
+
+.question-text {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.question-type {
+    font-size: 13px;
+    color: var(--text-gray);
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--light-blue);
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.option {
+    padding: 20px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--white);
+    font-size: 16px;
+    position: relative;
+}
+
+.option::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary-blue);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.option:hover {
+    border-color: var(--primary-blue);
+    background: var(--light-blue);
+    transform: translateX(8px);
+}
+
+.option:hover::before {
+    transform: scaleY(1);
+}
+
+.option.selected {
+    border-color: var(--primary-blue);
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.option.selected::before {
+    transform: scaleY(1);
+}
+
+.short-answer-input {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.short-answer-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+}
+
+.quiz-navigation {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(33, 150, 243, 0.5);
+}
+
+.btn-secondary {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.quiz-navigation .btn {
+    flex: 1;
+    padding: 18px 32px;
+    font-size: 17px;
+}
+
+@media (max-width: 968px) {
+    .quiz-container {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 24px 20px;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .quiz-info {
+        width: 100%;
+        justify-content: space-around;
+        gap: 16px;
+    }
+
+    .quiz-title h1 {
+        font-size: 24px;
+    }
+
+    .question-card {
+        padding: 24px;
+    }
+
+    .question-text {
+        font-size: 18px;
+    }
+
+    .quiz-navigation {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-container {
+        padding: 24px 16px;
+    }
+
+    .quiz-title h1 {
+        font-size: 22px;
+    }
+
+    .quiz-title p {
+        font-size: 14px;
+    }
+
+    .info-item .value {
+        font-size: 24px;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .option {
+        padding: 16px 20px;
+        font-size: 15px;
+    }
+
+    .short-answer-input {
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .quiz-navigation .btn {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .quiz-container {
+        max-width: 1000px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <div class="quiz-title">
+                <h1>⭐ Daily Challenge</h1>
+                <p>25 questions • 20 minutes • Score 85%+ to earn a certificate!</p>
+            </div>
+            <div class="quiz-info">
+                <div class="info-item">
+                    <div class="label">Time Remaining</div>
+                    <div class="value timer" id="timer">20:00</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Progress</div>
+                    <div class="value" id="progress">1/25</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="questionContainer"></div>
+        
+        <div class="quiz-navigation">
+            <button class="btn btn-secondary" id="prevBtn">Previous</button>
+            <button class="btn btn-primary" id="nextBtn">Next</button>
+        </div>
+    </div>
+    
+    <script src="questions-data.js"></script>
+    <script>
+        if (localStorage.getItem('topcit_logged_in') !== 'true') {
+            window.location.href = 'index.html';
+        }
+
+        const dailyQuestions = JSON.parse(sessionStorage.getItem('dailyChallenge') || '[]');
+        if (dailyQuestions.length === 0) {
+            window.location.href = 'daily.html';
+        }
+        
+        let currentQuiz = {
+            type: 'daily',
+            questions: dailyQuestions,
+            currentIndex: 0,
+            answers: {},
+            startTime: Date.now(),
+            timerInterval: null,
+            timeLimit: 1200
+        };
+        
+        function displayQuestion() {
+            const question = currentQuiz.questions[currentQuiz.currentIndex];
+            const container = document.getElementById('questionContainer');
+            document.getElementById('progress').textContent = `${currentQuiz.currentIndex + 1}/${currentQuiz.questions.length}`;
+            document.getElementById('prevBtn').disabled = currentQuiz.currentIndex === 0;
+            const nextBtn = document.getElementById('nextBtn');
+            nextBtn.textContent = currentQuiz.currentIndex === currentQuiz.questions.length - 1 ? 'Finish' : 'Next';
+            const savedAnswer = currentQuiz.answers[question.id] || '';
+            let optionsHTML = '';
+            if (question.type === 'mcq' || question.type === 'boolean') {
+                optionsHTML = `<div class="options">${question.options.map(opt => `<div class="option ${savedAnswer === opt ? 'selected' : ''}" onclick="selectOption('${opt.replace(/'/g, "\\'")}')"> ${opt}</div>`).join('')}</div>`;
+            } else {
+                optionsHTML = `<textarea class="short-answer-input" id="shortAnswer" placeholder="Type your answer here...">${savedAnswer || ''}</textarea>`;
+            }
+            const typeLabel = {'mcq': 'Multiple Choice', 'boolean': 'True/False', 'short': 'Short Answer', 'fill': 'Fill in the Blank'}[question.type] || 'Question';
+            container.innerHTML = `<div class="question-card"><div class="question-header"><span class="question-number">Question ${currentQuiz.currentIndex + 1} of ${currentQuiz.questions.length}</span><span class="question-difficulty ${question.difficulty}">${question.difficulty}</span></div><div class="question-type">${typeLabel}</div><div class="question-text">${question.question}</div>${optionsHTML}</div>`;
+        }
+        
+        function selectOption(option) {
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            event.target.classList.add('selected');
+            currentQuiz.answers[currentQuiz.questions[currentQuiz.currentIndex].id] = option;
+        }
+        
+        function saveCurrentAnswer() {
+            const question = currentQuiz.questions[currentQuiz.currentIndex];
+            if (question.type === 'short' || question.type === 'fill') {
+                const input = document.getElementById('shortAnswer');
+                if (input) currentQuiz.answers[question.id] = input.value.trim();
+            }
+        }
+        
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            let remainingTime = currentQuiz.timeLimit;
+            currentQuiz.timerInterval = setInterval(() => {
+                remainingTime--;
+                const minutes = Math.floor(remainingTime / 60);
+                const seconds = remainingTime % 60;
+                timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                if (remainingTime <= 120) timerElement.classList.add('warning');
+                if (remainingTime <= 0) { clearInterval(currentQuiz.timerInterval); finishQuiz(); }
+            }, 1000);
+        }
+        
+        function getUserData() { 
+            const data = localStorage.getItem('topcit_user_data'); 
+            return data ? JSON.parse(data) : null; 
+        }
+        
+        function saveUserData(data) { 
+            localStorage.setItem('topcit_user_data', JSON.stringify(data)); 
+        }
+        
+        function completeDailyChallenge(score, correctCount) {
+            const userData = getUserData();
+            const today = new Date().toISOString();
+            userData.dailyChallenge.lastAttempt = today;
+            if (!userData.dailyChallenge.history) userData.dailyChallenge.history = [];
+            userData.dailyChallenge.history.push({ date: today, score: score, correctCount: correctCount });
+            if (score >= 85) {
+                if (!userData.certificates) userData.certificates = [];
+                userData.certificates.push({ type: 'daily', date: today, score: score });
+            }
+            saveUserData(userData);
+        }
+        
+        function updateUserStats(testResults) {
+            const userData = getUserData();
+            userData.totalQuestions += testResults.questions.length;
+            userData.correctAnswers += testResults.correctCount;
+            userData.testsCompleted += 1;
+            userData.studyTime += testResults.timeSpent;
+            testResults.questions.forEach(q => {
+                if (!userData.topicPerformance[q.topic]) userData.topicPerformance[q.topic] = { correct: 0, total: 0, topicName: q.topicName };
+                userData.topicPerformance[q.topic].total += 1;
+                if (q.isCorrect) userData.topicPerformance[q.topic].correct += 1;
+            });
+            testResults.questions.forEach(q => {
+                userData.difficultyPerformance[q.difficulty].total += 1;
+                if (q.isCorrect) userData.difficultyPerformance[q.difficulty].correct += 1;
+            });
+            userData.testHistory.unshift({ date: new Date().toISOString(), type: testResults.type, score: testResults.score, correctCount: testResults.correctCount, totalQuestions: testResults.questions.length, timeSpent: testResults.timeSpent });
+            if (userData.testHistory.length > 20) userData.testHistory = userData.testHistory.slice(0, 20);
+            saveUserData(userData);
+        }
+        
+        function finishQuiz() {
+            if (currentQuiz.timerInterval) clearInterval(currentQuiz.timerInterval);
+            saveCurrentAnswer();
+            sessionStorage.removeItem('dailyChallenge');
+            const timeSpent = Math.floor((Date.now() - currentQuiz.startTime) / 1000);
+            let correctCount = 0;
+            const gradedQuestions = currentQuiz.questions.map(q => {
+                const userAnswer = currentQuiz.answers[q.id] || '';
+                const correctAnswer = q.answer;
+                let isCorrect = false;
+                if (q.type === 'mcq' || q.type === 'boolean') {
+                    isCorrect = userAnswer === correctAnswer;
+                } else {
+                    const userLower = userAnswer.toLowerCase();
+                    const correctLower = correctAnswer.toLowerCase();
+                    isCorrect = userLower.includes(correctLower) || correctLower.includes(userLower) || userLower === correctLower;
+                }
+                if (isCorrect) correctCount++;
+                return { ...q, userAnswer, correctAnswer, isCorrect };
+            });
+            const score = Math.round((correctCount / currentQuiz.questions.length) * 100);
+            completeDailyChallenge(score, correctCount);
+            const results = { type: 'daily', questions: gradedQuestions, correctCount, score, timeSpent };
+            sessionStorage.setItem('quizResults', JSON.stringify(results));
+            updateUserStats(results);
+            window.location.href = 'results.html';
+        }
+        
+        displayQuestion();
+        startTimer();
+        
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentQuiz.currentIndex > 0) { saveCurrentAnswer(); currentQuiz.currentIndex--; displayQuestion(); }
+        });
+        
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            saveCurrentAnswer();
+            if (currentQuiz.currentIndex < currentQuiz.questions.length - 1) { currentQuiz.currentIndex++; displayQuestion(); }
+            else { finishQuiz(); }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review TOPCIT Questions - TOPCIT Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2196F3;
+            --dark-blue: #1565C0;
+            --light-blue: #E3F2FD;
+            --text-dark: #212121;
+            --text-gray: #757575;
+            --bg-light: #f5f7fa;
+            --white: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+            --shadow-xl: 0 8px 32px rgba(0,0,0,0.2);
+            --danger-red: #f44336;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #f5f7fa 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .navbar {
+            background: var(--white);
+            padding: 20px 40px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .logo-small {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-small:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a.active {
+            color: var(--white);
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+
+        .nav-menu a.highlight {
+            color: var(--primary-blue);
+            box-shadow: inset 0 0 0 2px var(--primary-blue), 0 2px 8px rgba(33, 150, 243, 0.2);
+            font-weight: 600;
+        }
+
+        .nav-menu a.active,
+        .nav-menu a.active.highlight {
+            color: white !important;
+        }
+
+        .nav-menu a#logoutBtn {
+            color: var(--danger-red);
+            box-shadow: inset 0 0 0 2px var(--danger-red), 0 2px 8px rgba(244, 67, 54, 0.2);
+        }
+
+        .nav-menu a#logoutBtn:hover {
+            color: var(--danger-red);
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 3px;
+            background: var(--dark-blue);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .review-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 32px;
+        }
+
+        .review-card h2 {
+            font-size: 32px;
+            color: var(--dark-blue);
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .filter-group {
+            margin-bottom: 40px;
+        }
+
+        .filter-group label {
+            display: block;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .filter-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+
+        .filter-checkbox {
+            display: none;
+        }
+
+        .filter-label {
+            padding: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .filter-label:hover {
+            border-color: var(--primary-blue);
+            background: var(--light-blue);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .filter-checkbox:checked + .filter-label {
+            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            font-weight: 600;
+            box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+        }
+
+        .generate-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+        }
+
+        .module-container {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 32px;
+            animation: slideUp 0.6s ease;
+        }
+
+        .module-container h2 {
+            font-size: 36px;
+            color: var(--dark-blue);
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .topic-section {
+            margin-bottom: 40px;
+        }
+
+        .topic-section h3 {
+            font-size: 24px;
+            color: var(--dark-blue);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 8px;
+        }
+
+        .topic-intro {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .question-item {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .question-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .question-item h4 {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .question-item p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .question-item .answer {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .question-item .explanation {
+            font-size: 14px;
+            color: var(--text-dark);
+            background: var(--white);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 12px;
+            border-left: 2px solid var(--dark-blue);
+        }
+
+        .no-module {
+            text-align: center;
+            color: var(--text-gray);
+            font-style: italic;
+            padding: 40px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 20px;
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 16px;
+                padding: 20px 0;
+                background: var(--white);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: var(--shadow-lg);
+                animation: slideIn 0.3s ease;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 12px 16px;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .review-card, .module-container {
+                padding: 32px 24px;
+            }
+
+            .filter-options {
+                grid-template-columns: 1fr;
+            }
+
+            .review-container {
+                padding: 20px 16px;
+            }
+
+            .module-container h2 {
+                font-size: 28px;
+            }
+
+            .topic-section h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .navbar {
+                padding: 20px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-small">
+                <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+                    <path d="M32 12L8 22L32 32L56 22L32 12Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M16 26V36C16 36 20 42 32 42C44 42 48 36 48 36V26" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M56 22V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <rect x="22" y="34" width="20" height="24" rx="2" fill="white" opacity="0.95"/>
+                    <line x1="26" y1="40" x2="38" y2="40" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="26" y1="44" x2="38" y2="44" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="26" y1="48" x2="35" y2="48" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="44" cy="48" r="10" fill="#4CAF50"/>
+                    <path d="M40 48L42.5 51L48 45" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+            <span>TOPCIT Buddy</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="dashboard.html" class="highlight">Dashboard</a>
+            <a href="progress.html" >Progress</a>
+            <a href="achievements.html" >Achievements</a>
+            <a href="flashcards.html">Flashcards</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="review-container">
+        <div class="review-card">
+            <h2>Generate TOPCIT Study Module</h2>
+            
+            <div class="filter-group">
+                <label>Select Topics for Your Study Module</label>
+                <div class="filter-options topic-options">
+                    <input type="checkbox" class="filter-checkbox" id="topic-all" data-topic="all">
+                    <label class="filter-label" for="topic-all">All Topics</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-A" data-topic="A">
+                    <label class="filter-label" for="topic-A">Software Concepts</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-B" data-topic="B">
+                    <label class="filter-label" for="topic-B">Database</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-C" data-topic="C">
+                    <label class="filter-label" for="topic-C">Systems Architecture</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-D" data-topic="D">
+                    <label class="filter-label" for="topic-D">Information Security</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-E" data-topic="E">
+                    <label class="filter-label" for="topic-E">Networking & Communications</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-F" data-topic="F">
+                    <label class="filter-label" for="topic-F">IT Infrastructure</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-G" data-topic="G">
+                    <label class="filter-label" for="topic-G">Programming & Development</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-H" data-topic="H">
+                    <label class="filter-label" for="topic-H">Data Communications</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-I" data-topic="I">
+                    <label class="filter-label" for="topic-I">Project Management</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-J" data-topic="J">
+                    <label class="filter-label" for="topic-J">Emerging Technologies</label>
+                    <input type="checkbox" class="filter-checkbox" id="topic-K" data-topic="K">
+                    <label class="filter-label" for="topic-K">Professional Practice & Ethics</label>
+                </div>
+            </div>
+            
+            <button class="generate-btn" id="generateModule">Generate Module</button>
+        </div>
+        
+        <div class="module-container" id="moduleContainer" style="display: none;">
+            <h2>TOPCIT Study Module</h2>
+            <div id="moduleContent">
+                <p class="no-module">Select topics and click "Generate Module" to view your study module.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Hardcoded TOPCIT Questions
+        const ALL_QUESTIONS = [
+            {id: 'A1', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'mcq', question: 'Which software development model emphasizes iterative development and frequent client feedback?', options: ['Waterfall', 'Agile', 'V-Model', 'Spiral'], answer: 'Agile'},
+            {id: 'A2', topic: 'A', topicName: 'Software Concepts', difficulty: 'advanced', type: 'mcq', question: 'Which testing type focuses on checking interactions between integrated modules?', options: ['Unit testing', 'Integration testing', 'System testing', 'Acceptance testing'], answer: 'Integration testing'},
+            {id: 'A3', topic: 'A', topicName: 'Software Concepts', difficulty: 'beginner', type: 'short', question: 'What is software maintenance?', options: [], answer: 'Software maintenance involves updating, fixing bugs, and improving software after deployment to ensure continued functionality'},
+            {id: 'A4', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'boolean', question: 'The Waterfall model allows returning to previous phases easily.', options: ['True', 'False'], answer: 'False'},
+            {id: 'A5', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'short', question: 'A diagram showing system components and their relationships.', options: [], answer: 'UML Diagram'},
+            {id: 'A6', topic: 'A', topicName: 'Software Concepts', difficulty: 'advanced', type: 'fill', question: '__________ design focuses on the high-level structure and organization of software.', options: [], answer: 'Architectural'},
+            {id: 'A7', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'mcq', question: 'Which language is commonly used for web application backend development?', options: ['Python', 'HTML', 'CSS', 'SQL'], answer: 'Python'},
+            {id: 'A8', topic: 'A', topicName: 'Software Concepts', difficulty: 'advanced', type: 'mcq', question: 'Which practice reduces technical debt in software projects?', options: ['Code refactoring', 'Ignoring warnings', 'Skipping testing', 'Delaying updates'], answer: 'Code refactoring'},
+            {id: 'A9', topic: 'A', topicName: 'Software Concepts', difficulty: 'average', type: 'short', question: 'Define \"unit testing.\"', options: [], answer: 'Unit testing is the process of testing individual components or modules of software to ensure they work correctly'},
+            {id: 'A10', topic: 'A', topicName: 'Software Concepts', difficulty: 'beginner', type: 'boolean', question: 'Software trends include cloud-based applications and AI integration.', options: ['True', 'False'], answer: 'True'},
+            {id: 'B1', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'mcq', question: 'Which type of database model organizes data in tables with rows and columns?', options: ['Hierarchical', 'Relational', 'Object-oriented', 'Network'], answer: 'Relational'},
+            {id: 'B2', topic: 'B', topicName: 'Database', difficulty: 'advanced', type: 'mcq', question: 'Which SQL clause is used to remove duplicate rows from a query result?', options: ['DISTINCT', 'GROUP BY', 'ORDER BY', 'HAVING'], answer: 'DISTINCT'},
+            {id: 'B3', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'short', question: 'Define normalization in database design.', options: [], answer: 'Normalization is the process of organizing database tables to reduce redundancy and improve data integrity'},
+            {id: 'B4', topic: 'B', topicName: 'Database', difficulty: 'beginner', type: 'boolean', question: 'An ER diagram shows entities and their relationships.', options: ['True', 'False'], answer: 'True'},
+            {id: 'B5', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'short', question: 'A command used to modify existing records in SQL.', options: [], answer: 'UPDATE'},
+            {id: 'B6', topic: 'B', topicName: 'Database', difficulty: 'advanced', type: 'fill', question: 'A __________ ensures that multiple database operations are executed as a single unit.', options: [], answer: 'transaction'},
+            {id: 'B7', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'mcq', question: 'Which type of SQL join returns all rows from the left table and matched rows from the right table?', options: ['INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'FULL JOIN'], answer: 'LEFT JOIN'},
+            {id: 'B8', topic: 'B', topicName: 'Database', difficulty: 'advanced', type: 'mcq', question: 'Which SQL feature helps prevent SQL injection attacks?', options: ['Dynamic queries', 'Prepared statements', 'Concatenated strings', 'DROP TABLE'], answer: 'Prepared statements'},
+            {id: 'B9', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'short', question: 'What is an index in a database?', options: [], answer: 'An index is a database structure that improves query performance by allowing faster data retrieval'},
+            {id: 'B10', topic: 'B', topicName: 'Database', difficulty: 'average', type: 'boolean', question: 'Denormalization increases data redundancy to improve read performance.', options: ['True', 'False'], answer: 'True'},
+            {id: 'C1', topic: 'C', topicName: 'Systems Architecture', difficulty: 'beginner', type: 'mcq', question: 'Which component is considered hardware in a computer system?', options: ['Operating system', 'CPU', 'Middleware', 'API'], answer: 'CPU'},
+            {id: 'C2', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'mcq', question: 'Which OS concept manages memory allocation for running programs?', options: ['Process scheduling', 'Virtual memory', 'File system', 'Middleware'], answer: 'Virtual memory'},
+            {id: 'C3', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'short', question: 'Define virtualization.', options: [], answer: 'Virtualization is creating virtual versions of computing resources, such as servers or storage, allowing multiple environments on a single physical system'},
+            {id: 'C4', topic: 'C', topicName: 'Systems Architecture', difficulty: 'advanced', type: 'boolean', question: 'Distributed architecture allows multiple computers to share workload seamlessly.', options: ['True', 'False'], answer: 'True'},
+            {id: 'C5', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'short', question: 'A standard model describing seven layers of network communication.', options: [], answer: 'OSI Model'},
+            {id: 'C6', topic: 'C', topicName: 'Systems Architecture', difficulty: 'advanced', type: 'fill', question: '__________ routing dynamically determines the best path for data packets.', options: [], answer: 'Dynamic'},
+            {id: 'C7', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'mcq', question: 'Which protocol is used to send email messages?', options: ['FTP', 'SMTP', 'HTTP', 'DNS'], answer: 'SMTP'},
+            {id: 'C8', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'mcq', question: 'Which command checks active network connections on a computer?', options: ['ping', 'netstat', 'traceroute', 'ssh'], answer: 'netstat'},
+            {id: 'C9', topic: 'C', topicName: 'Systems Architecture', difficulty: 'average', type: 'short', question: 'What is middleware?', options: [], answer: 'Middleware is software that connects different applications or services, enabling them to communicate and share data'},
+            {id: 'C10', topic: 'C', topicName: 'Systems Architecture', difficulty: 'beginner', type: 'boolean', question: 'Cloud platforms can host web servers for distributed applications.', options: ['True', 'False'], answer: 'True'},
+            {id: 'D1', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'mcq', question: 'Which security principle ensures that data cannot be altered by unauthorized users?', options: ['Confidentiality', 'Integrity', 'Availability', 'Authentication'], answer: 'Integrity'},
+            {id: 'D2', topic: 'D', topicName: 'Information Security', difficulty: 'advanced', type: 'mcq', question: 'Which encryption type uses separate keys for encryption and decryption?', options: ['Symmetric', 'Asymmetric', 'Hashing', 'Digital signature'], answer: 'Asymmetric'},
+            {id: 'D3', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'short', question: 'Define a firewall.', options: [], answer: 'A firewall is a network security device that monitors and filters incoming and outgoing traffic based on security rules'},
+            {id: 'D4', topic: 'D', topicName: 'Information Security', difficulty: 'beginner', type: 'boolean', question: 'TLS ensures secure communication over the Internet.', options: ['True', 'False'], answer: 'True'},
+            {id: 'D5', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'short', question: 'A common attack where malicious SQL code is inserted into user input.', options: [], answer: 'SQL Injection'},
+            {id: 'D6', topic: 'D', topicName: 'Information Security', difficulty: 'advanced', type: 'fill', question: '__________ enforces role-based access control in a system.', options: [], answer: 'RBAC'},
+            {id: 'D7', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'mcq', question: 'Which type of security ensures data remains available to authorized users?', options: ['Integrity', 'Confidentiality', 'Availability', 'Authentication'], answer: 'Availability'},
+            {id: 'D8', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'mcq', question: 'Which function in Python can hash passwords securely?', options: ['md5()', 'sha1()', 'password_hash()', 'hashlib.sha256()'], answer: 'password_hash()'},
+            {id: 'D9', topic: 'D', topicName: 'Information Security', difficulty: 'average', type: 'short', question: 'What is a digital signature?', options: [], answer: 'A digital signature is a cryptographic value used to verify the authenticity and integrity of a message or document'},
+            {id: 'D10', topic: 'D', topicName: 'Information Security', difficulty: 'beginner', type: 'boolean', question: 'Incident response plans help organizations recover from security breaches.', options: ['True', 'False'], answer: 'True'},
+            {id: 'E1', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'mcq', question: 'Which network topology has all devices connected to a central hub?', options: ['Bus', 'Ring', 'Star', 'Mesh'], answer: 'Star'},
+            {id: 'E2', topic: 'E', topicName: 'Networking & Communications', difficulty: 'advanced', type: 'mcq', question: 'Which protocol is responsible for translating domain names to IP addresses?', options: ['HTTP', 'DNS', 'SMTP', 'FTP'], answer: 'DNS'},
+            {id: 'E3', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'short', question: 'Define LAN.', options: [], answer: 'LAN (Local Area Network) is a network that connects computers within a limited area, like a building or campus'},
+            {id: 'E4', topic: 'E', topicName: 'Networking & Communications', difficulty: 'beginner', type: 'boolean', question: 'Wireless networks can use WPA3 encryption for security.', options: ['True', 'False'], answer: 'True'},
+            {id: 'E5', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'short', question: 'A device that forwards data packets between networks.', options: [], answer: 'Router'},
+            {id: 'E6', topic: 'E', topicName: 'Networking & Communications', difficulty: 'advanced', type: 'fill', question: '__________ assigns IP addresses dynamically to devices on a network.', options: [], answer: 'DHCP'},
+            {id: 'E7', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'mcq', question: 'Which tool is used to check the route packets take to a destination?', options: ['ping', 'traceroute', 'netstat', 'nslookup'], answer: 'traceroute'},
+            {id: 'E8', topic: 'E', topicName: 'Networking & Communications', difficulty: 'advanced', type: 'mcq', question: 'Which protocol ensures reliable data transmission over IP networks?', options: ['UDP', 'TCP', 'ICMP', 'HTTP'], answer: 'TCP'},
+            {id: 'E9', topic: 'E', topicName: 'Networking & Communications', difficulty: 'average', type: 'short', question: 'What is QoS in networking?', options: [], answer: 'QoS (Quality of Service) manages network traffic to prioritize critical applications and ensure reliable performance'},
+            {id: 'E10', topic: 'E', topicName: 'Networking & Communications', difficulty: 'beginner', type: 'boolean', question: 'Cloud networking allows virtual network creation over physical networks.', options: ['True', 'False'], answer: 'True'},
+            {id: 'F1', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'mcq', question: 'Which Linux command lists files in a directory?', options: ['ls', 'dir', 'pwd', 'cd'], answer: 'ls'},
+            {id: 'F2', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'advanced', type: 'mcq', question: 'Which tool automates configuration management across multiple servers?', options: ['Git', 'Ansible', 'Docker', 'Jenkins'], answer: 'Ansible'},
+            {id: 'F3', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'short', question: 'Define a virtual machine.', options: [], answer: 'A virtual machine is a software-based emulation of a physical computer that runs an operating system and applications'},
+            {id: 'F4', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'beginner', type: 'boolean', question: 'User and group permissions control access to files in an OS.', options: ['True', 'False'], answer: 'True'},
+            {id: 'F5', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'short', question: 'A process that creates a copy of data to restore in case of failure.', options: [], answer: 'Backup'},
+            {id: 'F6', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'advanced', type: 'fill', question: '__________ is a containerization platform used to deploy applications in isolated environments.', options: [], answer: 'Docker'},
+            {id: 'F7', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'mcq', question: 'Which OS component schedules tasks and allocates CPU resources?', options: ['Kernel', 'Shell', 'Middleware', 'API'], answer: 'Kernel'},
+            {id: 'F8', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'advanced', type: 'mcq', question: 'Which CI/CD tool automates build, test, and deployment pipelines?', options: ['Jenkins', 'Git', 'Ansible', 'Docker'], answer: 'Jenkins'},
+            {id: 'F9', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'average', type: 'short', question: 'What is the purpose of system monitoring?', options: [], answer: 'System monitoring tracks performance, resource usage, and availability to detect issues and optimize operations'},
+            {id: 'F10', topic: 'F', topicName: 'IT Infrastructure', difficulty: 'beginner', type: 'boolean', question: 'IaaS, PaaS, and SaaS are models of cloud computing services.', options: ['True', 'False'], answer: 'True'},
+            {id: 'G1', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'mcq', question: 'Which programming paradigm focuses on objects and classes?', options: ['Procedural', 'Functional', 'Object-Oriented', 'Logic'], answer: 'Object-Oriented'},
+            {id: 'G2', topic: 'G', topicName: 'Programming & Development', difficulty: 'advanced', type: 'mcq', question: 'Which data structure uses FIFO (First In, First Out) principle?', options: ['Stack', 'Queue', 'Linked List', 'Tree'], answer: 'Queue'},
+            {id: 'G3', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'short', question: 'Define an API.', options: [], answer: 'An API (Application Programming Interface) allows software applications to communicate and share data with each other'},
+            {id: 'G4', topic: 'G', topicName: 'Programming & Development', difficulty: 'beginner', type: 'boolean', question: 'Unit testing focuses on individual modules or functions.', options: ['True', 'False'], answer: 'True'},
+            {id: 'G5', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'short', question: 'A system that manages code versions and collaboration.', options: [], answer: 'Git'},
+            {id: 'G6', topic: 'G', topicName: 'Programming & Development', difficulty: 'advanced', type: 'fill', question: '__________ testing evaluates software components together to ensure they function correctly.', options: [], answer: 'Integration'},
+            {id: 'G7', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'mcq', question: 'Which language is used for styling web pages?', options: ['HTML', 'CSS', 'JavaScript', 'Python'], answer: 'CSS'},
+            {id: 'G8', topic: 'G', topicName: 'Programming & Development', difficulty: 'advanced', type: 'mcq', question: 'Which Git command creates a new branch?', options: ['git commit', 'git branch', 'git merge', 'git checkout'], answer: 'git branch'},
+            {id: 'G9', topic: 'G', topicName: 'Programming & Development', difficulty: 'average', type: 'short', question: 'What is debugging in programming?', options: [], answer: 'Debugging is the process of identifying and fixing errors or bugs in a program'},
+            {id: 'G10', topic: 'G', topicName: 'Programming & Development', difficulty: 'beginner', type: 'boolean', question: 'Mobile apps can be developed using both native and cross-platform frameworks.', options: ['True', 'False'], answer: 'True'},
+            {id: 'H1', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'mcq', question: 'Which protocol is used for secure web communication?', options: ['HTTP', 'HTTPS', 'FTP', 'SMTP'], answer: 'HTTPS'},
+            {id: 'H2', topic: 'H', topicName: 'Data Communications', difficulty: 'advanced', type: 'mcq', question: 'Which layer of the OSI model is responsible for routing?', options: ['Transport', 'Network', 'Data Link', 'Application'], answer: 'Network'},
+            {id: 'H3', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'short', question: 'Define VoIP.', options: [], answer: 'VoIP (Voice over Internet Protocol) allows voice communication over IP networks'},
+            {id: 'H4', topic: 'H', topicName: 'Data Communications', difficulty: 'beginner', type: 'boolean', question: 'Packet switching divides data into small packets for transmission.', options: ['True', 'False'], answer: 'True'},
+            {id: 'H5', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'short', question: 'The system that translates human-readable domain names into IP addresses.', options: [], answer: 'DNS'},
+            {id: 'H6', topic: 'H', topicName: 'Data Communications', difficulty: 'advanced', type: 'fill', question: '__________ is the maximum data transfer rate of a network connection.', options: [], answer: 'Bandwidth'},
+            {id: 'H7', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'mcq', question: 'Which protocol supports RESTful web services?', options: ['SOAP', 'HTTP', 'FTP', 'SMTP'], answer: 'HTTP'},
+            {id: 'H8', topic: 'H', topicName: 'Data Communications', difficulty: 'advanced', type: 'mcq', question: 'Which HTTP method is used to update resources on a server?', options: ['GET', 'POST', 'PUT', 'DELETE'], answer: 'PUT'},
+            {id: 'H9', topic: 'H', topicName: 'Data Communications', difficulty: 'average', type: 'short', question: 'What is packet latency?', options: [], answer: 'Packet latency is the time it takes for data packets to travel from source to destination over a network'},
+            {id: 'H10', topic: 'H', topicName: 'Data Communications', difficulty: 'beginner', type: 'boolean', question: 'IoT devices communicate over cloud-based networks.', options: ['True', 'False'], answer: 'True'},
+            {id: 'I1', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'mcq', question: 'Which phase of the project lifecycle defines objectives and feasibility?', options: ['Planning', 'Initiation', 'Execution', 'Closure'], answer: 'Initiation'},
+            {id: 'I2', topic: 'I', topicName: 'Project Management', difficulty: 'advanced', type: 'mcq', question: 'Which Agile framework uses sprints and daily stand-ups?', options: ['Waterfall', 'Scrum', 'PRINCE2', 'Lean'], answer: 'Scrum'},
+            {id: 'I3', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'short', question: 'Define risk management in projects.', options: [], answer: 'Risk management identifies, analyzes, and mitigates potential threats to project success'},
+            {id: 'I4', topic: 'I', topicName: 'Project Management', difficulty: 'beginner', type: 'boolean', question: 'Service Level Agreements (SLAs) define expected service quality.', options: ['True', 'False'], answer: 'True'},
+            {id: 'I5', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'short', question: 'A document outlining project tasks, schedules, and resource allocation.', options: [], answer: 'Project Plan'},
+            {id: 'I6', topic: 'I', topicName: 'Project Management', difficulty: 'advanced', type: 'fill', question: '__________ methodology emphasizes iterative development and client feedback.', options: [], answer: 'Agile'},
+            {id: 'I7', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'mcq', question: 'Which ITIL process manages incidents to restore normal service?', options: ['Problem management', 'Change management', 'Incident management', 'Configuration management'], answer: 'Incident management'},
+            {id: 'I8', topic: 'I', topicName: 'Project Management', difficulty: 'advanced', type: 'mcq', question: 'Which tool tracks tasks, issues, and project progress?', options: ['Jira', 'Git', 'Docker', 'Jenkins'], answer: 'Jira'},
+            {id: 'I9', topic: 'I', topicName: 'Project Management', difficulty: 'average', type: 'short', question: 'What is continuous improvement in IT service management?', options: [], answer: 'Continuous improvement identifies areas to optimize processes, services, and performance over time'},
+            {id: 'I10', topic: 'I', topicName: 'Project Management', difficulty: 'beginner', type: 'boolean', question: 'Waterfall methodology executes project phases sequentially.', options: ['True', 'False'], answer: 'True'},
+            {id: 'J1', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'mcq', question: 'Which technology enables devices to communicate and exchange data over the Internet?', options: ['Blockchain', 'IoT', 'Cloud Computing', 'AI'], answer: 'IoT'},
+            {id: 'J2', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'advanced', type: 'mcq', question: 'Which AI concept allows systems to learn from data and improve performance?', options: ['Machine learning', 'Expert systems', 'Virtualization', 'SaaS'], answer: 'Machine learning'},
+            {id: 'J3', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'short', question: 'Define blockchain.', options: [], answer: 'Blockchain is a distributed ledger technology that records transactions in a secure, tamper-resistant chain of blocks'},
+            {id: 'J4', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'beginner', type: 'boolean', question: '5G networks provide higher bandwidth and lower latency than 4G.', options: ['True', 'False'], answer: 'True'},
+            {id: 'J5', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'short', question: 'Computing done near data sources to reduce latency.', options: [], answer: 'Edge computing'},
+            {id: 'J6', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'advanced', type: 'fill', question: '__________ computing extends cloud capabilities closer to IoT devices.', options: [], answer: 'Fog'},
+            {id: 'J7', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'mcq', question: 'Which platform provides scalable cloud computing services?', options: ['AWS', 'GitHub', 'Docker', 'TensorFlow'], answer: 'AWS'},
+            {id: 'J8', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'advanced', type: 'mcq', question: 'Which AI library is widely used for machine learning in Python?', options: ['TensorFlow', 'React', 'Angular', 'Bootstrap'], answer: 'TensorFlow'},
+            {id: 'J9', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'average', type: 'short', question: 'What is a cyber-physical system?', options: [], answer: 'A system integrating computation, networking, and physical processes to monitor and control physical devices'},
+            {id: 'J10', topic: 'J', topicName: 'Emerging Technologies', difficulty: 'beginner', type: 'boolean', question: 'Automation and robotics are emerging technologies transforming industry.', options: ['True', 'False'], answer: 'True'},
+            {id: 'K1', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'mcq', question: 'Which law protects personal data in the EU?', options: ['HIPAA', 'GDPR', 'Data Privacy Act', 'ISO 27001'], answer: 'GDPR'},
+            {id: 'K2', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'advanced', type: 'mcq', question: 'Which of the following is an ethical responsibility for IT professionals?', options: ['Ignoring data privacy', 'Protecting sensitive information', 'Copying software illegally', 'Disabling security protocols'], answer: 'Protecting sensitive information'},
+            {id: 'K3', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'short', question: 'Define digital rights.', options: [], answer: 'Digital rights are the entitlements and protections individuals have regarding the use and access of digital technology and information'},
+            {id: 'K4', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'beginner', type: 'boolean', question: 'IT professionals must comply with workplace safety and legal regulations.', options: ['True', 'False'], answer: 'True'},
+            {id: 'K5', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'short', question: 'A standard for information security management.', options: [], answer: 'ISO/IEC 27001'},
+            {id: 'K6', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'advanced', type: 'fill', question: '__________ governs the handling and protection of health-related data in the US.', options: [], answer: 'HIPAA'},
+            {id: 'K7', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'mcq', question: 'Which practice reduces environmental impact of IT operations?', options: ['E-waste recycling', 'Ignoring regulations', 'Using outdated software', 'Over-provisioning servers'], answer: 'E-waste recycling'},
+            {id: 'K8', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'advanced', type: 'mcq', question: 'Which approach ensures secure software development practices?', options: ['Ignoring input validation', 'Secure coding standards', 'Copy-pasting code', 'Skipping testing'], answer: 'Secure coding standards'},
+            {id: 'K9', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'average', type: 'short', question: 'What is professional conduct in IT?', options: [], answer: 'Professional conduct includes ethical behavior, clear communication, responsibility, and adherence to legal and organizational standards'},
+            {id: 'K10', topic: 'K', topicName: 'Professional Practice & Ethics', difficulty: 'beginner', type: 'boolean', question: 'Compliance with data privacy laws is mandatory for organizations handling personal data.', options: ['True', 'False'], answer: 'True'}
+        ];
+
+        // Topic explanations
+        const TOPIC_EXPLANATIONS = {
+            'A': {
+                name: 'Software Concepts',
+                intro: 'Software Concepts cover the foundational principles of software development, including methodologies, testing, and design. This topic explores development models like Agile and Waterfall, testing strategies such as unit and integration testing, and tools like UML diagrams for system design. Understanding these concepts ensures efficient, reliable, and maintainable software creation.'
+            },
+            'B': {
+                name: 'Database',
+                intro: 'Databases are critical for storing and managing data efficiently. This topic includes relational database models, SQL commands, normalization, and security practices like prepared statements to prevent attacks such as SQL injection. Mastery of database concepts ensures robust data management and retrieval.'
+            },
+            'C': {
+                name: 'Systems Architecture',
+                intro: 'Systems Architecture focuses on the structure and interaction of computing systems, including hardware, operating systems, and networking protocols. Topics like virtualization, the OSI model, and middleware are key to designing scalable and efficient IT systems.'
+            },
+            'D': {
+                name: 'Information Security',
+                intro: 'Information Security protects data from unauthorized access, alteration, or loss. This topic covers principles like confidentiality, integrity, and availability, along with techniques such as encryption, firewalls, and role-based access control (RBAC) to secure systems.'
+            },
+            'E': {
+                name: 'Networking & Communications',
+                intro: 'Networking & Communications enable devices to connect and exchange data. This topic includes network topologies, protocols like TCP and DNS, and concepts like QoS and DHCP, essential for building reliable and secure network infrastructures.'
+            },
+            'F': {
+                name: 'IT Infrastructure',
+                intro: 'IT Infrastructure encompasses the hardware, software, and services that support IT operations. This topic covers virtualization, containerization (e.g., Docker), system monitoring, and cloud computing models like IaaS, PaaS, and SaaS.'
+            },
+            'G': {
+                name: 'Programming & Development',
+                intro: 'Programming & Development involves writing and managing code to create software. This topic includes paradigms like object-oriented programming, version control with Git, and debugging, ensuring high-quality and maintainable code.'
+            },
+            'H': {
+                name: 'Data Communications',
+                intro: 'Data Communications focuses on the transmission of data over networks. This topic covers protocols like HTTPS and HTTP, OSI model layers, and concepts like bandwidth and latency, critical for efficient data transfer.'
+            },
+            'I': {
+                name: 'Project Management',
+                intro: 'Project Management ensures successful delivery of IT projects. This topic includes methodologies like Agile and Scrum, risk management, and tools like Jira, emphasizing planning, execution, and continuous improvement.'
+            },
+            'J': {
+                name: 'Emerging Technologies',
+                intro: 'Emerging Technologies explore innovations transforming IT, such as IoT, blockchain, and AI. This topic covers machine learning, edge computing, and cloud platforms like AWS, preparing you for cutting-edge developments.'
+            },
+            'K': {
+                name: 'Professional Practice & Ethics',
+                intro: 'Professional Practice & Ethics guide IT professionals in responsible conduct. This topic covers data privacy laws like GDPR and HIPAA, secure coding standards, and ethical responsibilities like e-waste recycling.'
+            }
+        };
+
+        // Check login status
+        if (localStorage.getItem('topcit_logged_in') !== 'true') {
+            window.location.href = 'index.html';
+        }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('topcit_logged_in');
+            localStorage.removeItem('topcit_username');
+            window.location.href = 'index.html';
+        });
+
+        // Handle "All Topics" checkbox
+        const allTopicsCheckbox = document.getElementById('topic-all');
+        const topicCheckboxes = document.querySelectorAll('.filter-checkbox:not(#topic-all)');
+
+        allTopicsCheckbox.addEventListener('change', () => {
+            const isChecked = allTopicsCheckbox.checked;
+            topicCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+                checkbox.dispatchEvent(new Event('change')); // Trigger visual update
+            });
+        });
+
+        topicCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // If any individual topic is unchecked, uncheck "All Topics"
+                if (!checkbox.checked) {
+                    allTopicsCheckbox.checked = false;
+                }
+                // If all individual topics are checked, check "All Topics"
+                const allChecked = Array.from(topicCheckboxes).every(cb => cb.checked);
+                if (allChecked) {
+                    allTopicsCheckbox.checked = true;
+                }
+            });
+        });
+
+        // Generate module functionality
+        document.getElementById('generateModule').addEventListener('click', () => {
+            const selectedTopics = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+                .map(checkbox => checkbox.dataset.topic)
+                .filter(topic => topic !== 'all');
+
+            const moduleContainer = document.getElementById('moduleContainer');
+            const moduleContent = document.getElementById('moduleContent');
+
+            // If no topics selected, show message
+            if (selectedTopics.length === 0) {
+                moduleContainer.style.display = 'block';
+                moduleContent.innerHTML = '<p class="no-module">Please select at least one topic to generate the study module.</p>';
+                return;
+            }
+
+            // Filter questions based on selected topics
+            let filteredQuestions = ALL_QUESTIONS;
+            if (!selectedTopics.includes('all')) {
+                filteredQuestions = ALL_QUESTIONS.filter(q => selectedTopics.includes(q.topic));
+            }
+
+            // Group questions by topic
+            const groupedQuestions = filteredQuestions.reduce((acc, question) => {
+                const topic = question.topicName;
+                if (!acc[topic]) {
+                    acc[topic] = [];
+                }
+                acc[topic].push(question);
+                return acc;
+            }, {});
+
+            // Sort topics alphabetically
+            const sortedTopics = Object.keys(groupedQuestions).sort();
+
+            // Generate module HTML
+            moduleContent.innerHTML = sortedTopics.map(topic => {
+                const topicInfo = TOPIC_EXPLANATIONS[ALL_QUESTIONS.find(q => q.topicName === topic).topic];
+                return `
+                    <div class="topic-section">
+                        <h3>${topic}</h3>
+                        <p class="topic-intro">${topicInfo.intro}</p>
+                        ${groupedQuestions[topic].map(q => `
+                            <div class="question-item">
+                                <h4>${q.question}</h4>
+                                ${q.options && q.options.length > 0 ? `<p><strong>Options:</strong> ${q.options.join(', ')}</p>` : ''}
+                                <p class="answer">Answer: ${q.answer}</p>
+                                <p><strong>Type:</strong> ${q.type === 'mcq' ? 'Multiple Choice' : q.type === 'short' ? 'Short Answer' : q.type === 'boolean' ? 'True/False' : 'Fill-in-the-Blank'}</p>
+                                <p class="explanation">${getExplanation(q.id)}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }).join('');
+
+            moduleContainer.style.display = 'block';
+        });
+
+        // Explanations for each question
+        function getExplanation(questionId) {
+            const explanations = {
+                'A1': 'Agile emphasizes iterative development, delivering small, functional increments with regular client feedback to adapt to changing requirements.',
+                'A2': 'Integration testing verifies that combined modules work together correctly, identifying issues at module interfaces.',
+                'A3': 'Software maintenance ensures software remains functional by addressing bugs, updating features, and adapting to new environments.',
+                'A4': 'The Waterfall model is linear, making it difficult to revisit earlier phases once completed, unlike iterative models.',
+                'A5': 'UML diagrams visually represent system components and their relationships, aiding in design and communication.',
+                'A6': 'Architectural design defines the high-level structure, ensuring scalability and maintainability of software systems.',
+                'A7': 'Python is widely used for web backend development due to its versatility and frameworks like Django and Flask.',
+                'A8': 'Code refactoring improves code quality by restructuring it without changing functionality, reducing technical debt.',
+                'A9': 'Unit testing isolates individual components to verify their correctness, ensuring robust software development.',
+                'A10': 'Cloud-based applications and AI integration are key trends driving modern software innovation.',
+                'B1': 'Relational databases use tables with rows and columns, enabling efficient data organization and querying with SQL.',
+                'B2': 'The DISTINCT clause eliminates duplicate rows in query results, ensuring unique data output.',
+                'B3': 'Normalization organizes tables to minimize redundancy, improving data integrity and reducing anomalies.',
+                'B4': 'ER diagrams map entities and their relationships, providing a visual blueprint for database design.',
+                'B5': 'The UPDATE command modifies existing records in a database table, often used with WHERE clauses.',
+                'B6': 'Transactions ensure that multiple operations are executed as a single, atomic unit, maintaining data consistency.',
+                'B7': 'LEFT JOIN includes all rows from the left table, with matching rows from the right table or NULL if no match exists.',
+                'B8': 'Prepared statements precompile SQL queries, preventing malicious input from causing SQL injection attacks.',
+                'B9': 'Indexes speed up data retrieval by creating efficient lookup structures, though they may slow write operations.',
+                'B10': 'Denormalization intentionally increases redundancy to optimize read-heavy queries, often used in data warehousing.',
+                'C1': 'The CPU is a hardware component, executing instructions critical to a computer system’s operation.',
+                'C2': 'Virtual memory allows programs to use more memory than physically available by swapping data to disk.',
+                'C3': 'Virtualization creates virtual resources, enabling efficient use of hardware for multiple environments.',
+                'C4': 'Distributed architectures distribute workloads across multiple systems, improving scalability and fault tolerance.',
+                'C5': 'The OSI model standardizes network communication into seven layers, from physical to application.',
+                'C6': 'Dynamic routing adapts to network changes, selecting optimal paths for data packets in real-time.',
+                'C7': 'SMTP (Simple Mail Transfer Protocol) is used to send email messages across networks.',
+                'C8': 'The netstat command displays active network connections, helping diagnose network issues.',
+                'C9': 'Middleware bridges applications and services, facilitating seamless data exchange and integration.',
+                'C10': 'Cloud platforms support distributed applications by providing scalable, virtualized server environments.',
+                'D1': 'Integrity ensures data remains unaltered by unauthorized users, maintaining its accuracy and reliability.',
+                'D2': 'Asymmetric encryption uses public and private keys, enhancing security for data exchange.',
+                'D3': 'Firewalls filter network traffic based on rules, protecting systems from unauthorized access.',
+                'D4': 'TLS (Transport Layer Security) encrypts internet communications, ensuring data confidentiality and integrity.',
+                'D5': 'SQL injection exploits poorly sanitized inputs, allowing attackers to manipulate database queries.',
+                'D6': 'RBAC (Role-Based Access Control) restricts access based on user roles, enhancing security.',
+                'D7': 'Availability ensures authorized users can access data and systems when needed.',
+                'D8': 'The password_hash() function in Python securely hashes passwords, protecting user credentials.',
+                'D9': 'Digital signatures use cryptography to verify the authenticity and integrity of digital messages.',
+                'D10': 'Incident response plans outline steps to detect, respond to, and recover from security breaches.',
+                'E1': 'Star topology connects all devices to a central hub, simplifying network management and fault isolation.',
+                'E2': 'DNS (Domain Name System) translates domain names to IP addresses, enabling user-friendly web access.',
+                'E3': 'LANs connect devices in a small geographic area, supporting local data sharing and communication.',
+                'E4': 'WPA3 provides advanced encryption for wireless networks, enhancing security over previous standards.',
+                'E5': 'Routers forward data packets between networks, enabling communication across different network segments.',
+                'E6': 'DHCP (Dynamic Host Configuration Protocol) automates IP address assignment, simplifying network setup.',
+                'E7': 'Traceroute maps the path packets take to a destination, helping diagnose network connectivity issues.',
+                'E8': 'TCP ensures reliable data transmission by managing packet delivery and retransmission.',
+                'E9': 'QoS prioritizes network traffic to ensure performance for critical applications, like video streaming.',
+                'E10': 'Cloud networking creates virtual networks, enabling flexible and scalable communication infrastructures.',
+                'F1': 'The ls command in Linux lists directory contents, a fundamental tool for file management.',
+                'F2': 'Ansible automates server configuration, ensuring consistent and efficient infrastructure management.',
+                'F3': 'Virtual machines emulate physical computers, allowing multiple OS environments on one system.',
+                'F4': 'User and group permissions control access to files, ensuring security and proper access management.',
+                'F5': 'Backups create data copies for recovery, protecting against data loss from failures or attacks.',
+                'F6': 'Docker enables containerization, isolating applications for consistent deployment across environments.',
+                'F7': 'The kernel manages CPU resources and task scheduling, core to operating system functionality.',
+                'F8': 'Jenkins automates CI/CD pipelines, streamlining software build, test, and deployment processes.',
+                'F9': 'System monitoring tracks resource usage and performance, enabling proactive issue resolution.',
+                'F10': 'IaaS, PaaS, and SaaS provide scalable cloud computing models for infrastructure, platforms, and software.',
+                'G1': 'Object-Oriented programming organizes code into objects and classes, promoting modularity and reuse.',
+                'G2': 'Queues follow FIFO, ideal for tasks like job scheduling where order of processing matters.',
+                'G3': 'APIs define interfaces for applications to interact, enabling seamless data and service integration.',
+                'G4': 'Unit testing verifies individual functions or modules, catching bugs early in development.',
+                'G5': 'Git manages code versions, enabling collaboration and tracking changes across development teams.',
+                'G6': 'Integration testing ensures combined components work together, validating system interactions.',
+                'G7': 'CSS styles web pages, controlling layout and visual presentation for user interfaces.',
+                'G8': 'The git branch command creates new branches, supporting parallel development workflows.',
+                'G9': 'Debugging identifies and resolves code errors, ensuring software reliability and performance.',
+                'G10': 'Native and cross-platform frameworks enable flexible mobile app development for various platforms.',
+                'H1': 'HTTPS encrypts web communications, ensuring secure data transfer between clients and servers.',
+                'H2': 'The Network layer in the OSI model handles routing, directing packets across networks.',
+                'H3': 'VoIP enables voice calls over the internet, reducing costs compared to traditional telephony.',
+                'H4': 'Packet switching breaks data into packets, improving efficiency and resilience in data transmission.',
+                'H5': 'DNS resolves domain names to IP addresses, enabling users to access websites easily.',
+                'H6': 'Bandwidth determines the maximum data transfer rate, critical for network performance.',
+                'H7': 'HTTP supports RESTful web services, enabling lightweight, scalable API communication.',
+                'H8': 'The PUT method updates server resources, commonly used in RESTful API designs.',
+                'H9': 'Packet latency measures network delay, impacting real-time application performance.',
+                'H10': 'IoT devices use cloud networks for scalable, remote communication and data processing.',
+                'I1': 'The Initiation phase defines project goals and feasibility, setting the foundation for success.',
+                'I2': 'Scrum uses sprints and daily stand-ups to promote iterative development and team collaboration.',
+                'I3': 'Risk management proactively addresses potential issues, ensuring project stability and success.',
+                'I4': 'SLAs define service quality expectations, ensuring accountability in IT service delivery.',
+                'I5': 'A project plan outlines tasks, schedules, and resources, guiding project execution.',
+                'I6': 'Agile methodology prioritizes iterative development and client feedback for flexibility.',
+                'I7': 'Incident management restores normal service quickly, minimizing disruptions in IT operations.',
+                'I8': 'Jira tracks tasks and progress, supporting efficient project management and issue resolution.',
+                'I9': 'Continuous improvement optimizes IT services over time, enhancing efficiency and quality.',
+                'I10': 'Waterfall’s sequential phases provide a structured approach to project management.',
+                'J1': 'IoT connects devices for data exchange, enabling smart applications like home automation.',
+                'J2': 'Machine learning enables systems to learn from data, improving performance without explicit programming.',
+                'J3': 'Blockchain ensures secure, tamper-resistant transaction records, used in cryptocurrencies and more.',
+                'J4': '5G offers higher bandwidth and lower latency, enhancing mobile and IoT applications.',
+                'J5': 'Edge computing processes data near its source, reducing latency for real-time applications.',
+                'J6': 'Fog computing extends cloud capabilities, supporting IoT with localized processing.',
+                'J7': 'AWS provides scalable cloud services, supporting diverse computing and storage needs.',
+                'J8': 'TensorFlow is a leading Python library for building and deploying machine learning models.',
+                'J9': 'Cyber-physical systems integrate computing and physical processes, like autonomous vehicles.',
+                'J10': 'Automation and robotics transform industries, improving efficiency and precision.',
+                'K1': 'GDPR enforces strict data privacy rules in the EU, protecting personal information.',
+                'K2': 'Protecting sensitive information is a core ethical duty for IT professionals.',
+                'K3': 'Digital rights ensure fair access and protection in the use of digital technologies.',
+                'K4': 'Compliance with regulations is essential for safe and legal IT operations.',
+                'K5': 'ISO/IEC 27001 provides a framework for managing information security risks.',
+                'K6': 'HIPAA regulates the secure handling of health-related data in the US.',
+                'K7': 'E-waste recycling minimizes the environmental impact of discarded IT equipment.',
+                'K8': 'Secure coding standards prevent vulnerabilities, ensuring robust software development.',
+                'K9': 'Professional conduct in IT fosters ethical, responsible, and compliant practices.',
+                'K10': 'Data privacy laws mandate protections for personal data, ensuring user trust.'
+            };
+            return explanations[questionId] || 'This concept is fundamental to the topic and reinforces key principles.';
+        }
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Mode - TOPCIT Buddy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2196F3;
+            --secondary-blue: #64B5F6;
+            --dark-blue: #1565C0;
+            --darker-blue: #0D47A1;
+            --light-blue: #E3F2FD;
+            --purple: #9c27b0;
+            --teal-blue-start: #00695C;
+            --teal-blue-end: #0288D1;
+            --text-dark: #212121;
+            --text-gray: #757575;
+            --bg-light: #f5f7fa;
+            --white: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+            --shadow-xl: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #f5f7fa 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .practice-selector {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .selector-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .selector-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .selector-card h2 {
+            font-size: 28px;
+            color: var(--dark-blue);
+            margin-bottom: 32px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .selector-group {
+            margin-bottom: 32px;
+        }
+
+        .selector-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .difficulty-options,
+        .topic-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .option-btn {
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-blue);
+            background: var(--light-blue);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            color: var(--white);
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .question-count {
+            margin-bottom: 32px;
+        }
+
+        .question-count input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .question-count input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+        }
+
+        .btn {
+            padding: 18px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            color: var(--white);
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        @media (max-width: 968px) {
+            .practice-selector {
+                max-width: 800px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .practice-selector {
+                padding: 24px 20px;
+            }
+
+            .selector-card {
+                padding: 24px;
+            }
+
+            .selector-card h2 {
+                font-size: 24px;
+            }
+
+            .selector-group label {
+                font-size: 15px;
+            }
+
+            .option-btn {
+                font-size: 13px;
+            }
+
+            .question-count input {
+                font-size: 14px;
+            }
+
+            .btn-primary {
+                padding: 16px 24px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .practice-selector {
+                padding: 24px 16px;
+            }
+
+            .selector-card {
+                padding: 24px 16px;
+            }
+
+            .selector-card h2 {
+                font-size: 20px;
+            }
+
+            .selector-group label {
+                font-size: 14px;
+            }
+
+            .option-btn {
+                padding: 14px;
+                font-size: 12px;
+            }
+
+            .question-count input {
+                padding: 14px 16px;
+                font-size: 13px;
+            }
+
+            .btn-primary {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .practice-selector {
+                max-width: 1000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="practice-selector">
+        <div class="selector-card">
+            <h2>Customize Your Practice</h2>
+            
+            <div class="selector-group">
+                <label>Select Difficulty Level</label>
+                <div class="difficulty-options">
+                    <button class="option-btn" data-difficulty="beginner">Beginner</button>
+                    <button class="option-btn" data-difficulty="average">Average</button>
+                    <button class="option-btn" data-difficulty="advanced">Advanced</button>
+                    <button class="option-btn selected" data-difficulty="mixed">Mixed</button>
+                </div>
+            </div>
+            
+            <div class="selector-group">
+                <label>Select Topic (Optional)</label>
+                <div class="topic-options">
+                    <button class="option-btn selected" data-topic="all">All Topics</button>
+                    <button class="option-btn" data-topic="A">Software Concepts</button>
+                    <button class="option-btn" data-topic="B">Database</button>
+                    <button class="option-btn" data-topic="C">Systems Architecture</button>
+                    <button class="option-btn" data-topic="D">Information Security</button>
+                    <button class="option-btn" data-topic="E">Networking</button>
+                    <button class="option-btn" data-topic="F">IT Infrastructure</button>
+                    <button class="option-btn" data-topic="G">Programming</button>
+                    <button class="option-btn" data-topic="H">Data Communications</button>
+                    <button class="option-btn" data-topic="I">Project Management</button>
+                    <button class="option-btn" data-topic="J">Emerging Tech</button>
+                    <button class="option-btn" data-topic="K">Ethics</button>
+                </div>
+            </div>
+            
+            <div class="selector-group question-count">
+                <label for="questionCount">Number of Questions</label>
+                <input type="number" id="questionCount" min="5" max="50" value="20">
+            </div>
+            
+            <button class="btn btn-primary" id="startPractice">Start Practice</button>
+        </div>
+    </div>
+    
+    <script>
+        if (localStorage.getItem('topcit_logged_in') !== 'true') {
+            localStorage.removeItem('topcit_username');
+            window.location.href = 'index.html';
+        }
+
+        document.querySelectorAll('.difficulty-options .option-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.difficulty-options .option-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        });
+        
+        document.querySelectorAll('.topic-options .option-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.topic-options .option-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        });
+        
+        document.getElementById('startPractice').addEventListener('click', () => {
+            const difficulty = document.querySelector('.difficulty-options .option-btn.selected').dataset.difficulty;
+            const topic = document.querySelector('.topic-options .option-btn.selected').dataset.topic;
+            const count = parseInt(document.getElementById('questionCount').value);
+            
+            sessionStorage.setItem('practiceMode', JSON.stringify({ difficulty: difficulty, topic: topic, count: count }));
+            window.location.href = 'test.html';
+        });
+    </script>
+</body>
+</html>

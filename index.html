@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPCIT Buddy - Login</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #2196F3;
+    --secondary-blue: #64B5F6;
+    --dark-blue: #1565C0;
+    --light-blue: #E3F2FD;
+    --darker-blue: #0D47A1;
+    --success-green: #4caf50;
+    --warning-orange: #ff9800;
+    --danger-red: #f44336;
+    --text-dark: #212121;
+    --text-gray: #757575;
+    --bg-light: #f5f7fa;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Keyframe Animations */
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(20px); }
+    75% { transform: translateX(-20px); }
+}
+
+@keyframes bounceGentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes glowPulse {
+    0%, 100% { 
+        filter: brightness(1) drop-shadow(0 0 20px rgba(33, 150, 243, 0.5));
+    }
+    50% { 
+        filter: brightness(1.2) drop-shadow(0 0 30px rgba(33, 150, 243, 0.8));
+    }
+}
+
+@keyframes spinButton {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Login Page Container */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #2196F3 100%);
+    position: relative;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+/* Animated Background Elements */
+.bg-orb-1 {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+    animation: spin 25s linear infinite, pulse 3s ease-in-out infinite;
+    filter: blur(60px);
+}
+
+.bg-orb-2 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    border-radius: 50%;
+    bottom: -200px;
+    left: -200px;
+    animation: spinReverse 20s linear infinite, pulse 4s ease-in-out infinite;
+    filter: blur(60px);
+}
+
+.circle-1 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.circle-2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(100, 181, 246, 0.4), transparent);
+    border-radius: 50%;
+    top: 60%;
+    right: 15%;
+    animation: floatSlow 8s ease-in-out infinite;
+}
+
+.circle-3 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent);
+    border-radius: 50%;
+    bottom: 30%;
+    left: 20%;
+    animation: wave 10s ease-in-out infinite;
+}
+
+.diamond-1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), transparent);
+    transform: rotate(45deg);
+    top: 40%;
+    right: 5%;
+    animation: spin 15s linear infinite;
+}
+
+.square-1 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    top: 15%;
+    right: 25%;
+    animation: float 9s ease-in-out infinite, spin 20s linear infinite;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Login Container */
+.login-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 480px;
+    animation: scaleIn 0.6s ease;
+    min-height: 100%;
+    padding-bottom: 24px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 56px 48px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.6s ease;
+}
+
+/* Logo Section */
+.logo-section {
+    margin-bottom: 56px;
+    text-align: center;
+}
+
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 32px;
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 32px rgba(33, 150, 243, 0.5);
+    animation: bounceGentle 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-circle:hover {
+    transform: scale(1.05);
+}
+
+.logo-circle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 1s;
+}
+
+.logo-circle:hover::before {
+    transform: translateX(100%);
+}
+
+.logo-section h1 {
+    font-size: 48px;
+    background: linear-gradient(135deg, #1565C0, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.tagline {
+    color: var(--text-gray);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Form Styles */
+.login-form, .signup-form {
+    margin-top: 40px;
+}
+
+.form-group {
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2196F3, #1565C0);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.form-group:focus-within .input-wrapper::after {
+    transform: scaleX(1);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 18px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    background: var(--white);
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group input:hover {
+    border-color: rgba(33, 150, 243, 0.5);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 56px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-gray);
+    transition: all 0.3s ease;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: var(--primary-blue);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 20px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    color: var(--white);
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.7s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(33, 150, 243, 0.5);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spinButton 0.8s linear infinite;
+}
+
+/* Toggle Link Styles */
+.toggle-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--text-gray);
+}
+
+.toggle-link a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.toggle-link a:hover {
+    color: var(--dark-blue);
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+    color: var(--danger-red);
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 14px;
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-card {
+        padding: 48px 32px;
+    }
+    
+    .logo-section h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: 16px;
+    }
+    
+    .login-card {
+        padding: 40px 24px;
+    }
+    
+    .logo-section h1 {
+        font-size: 36px;
+    }
+    
+    .logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+}
+    </style>
+</head>
+<body class="login-page">
+    <!-- Background Elements -->
+    <div class="bg-orb-1"></div>
+    <div class="bg-orb-2"></div>
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="circle-3"></div>
+    <div class="diamond-1"></div>
+    <div class="square-1"></div>
+    
+    <!-- Particles -->
+    <div class="particle" style="top: 15%; left: 25%; animation-delay: 0s; animation-duration: 4s;"></div>
+    <div class="particle" style="top: 45%; left: 15%; animation-delay: 1s; animation-duration: 5s;"></div>
+    <div class="particle" style="top: 75%; left: 35%; animation-delay: 2s; animation-duration: 6s;"></div>
+    <div class="particle" style="top: 30%; right: 20%; animation-delay: 0.5s; animation-duration: 4.5s;"></div>
+    <div class="particle" style="top: 65%; right: 30%; animation-delay: 1.5s; animation-duration: 5.5s;"></div>
+    <div class="particle" style="bottom: 20%; left: 45%; animation-delay: 2.5s; animation-duration: 7s;"></div>
+    <div class="particle" style="bottom: 40%; right: 15%; animation-delay: 3s; animation-duration: 6.5s;"></div>
+    <div class="particle" style="top: 50%; left: 50%; animation-delay: 3.5s; animation-duration: 8s;"></div>
+    
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="logo-circle">
+                    <svg width="70" height="70" viewBox="0 0 64 64" fill="none">
+                        <!-- Graduation cap -->
+                        <path d="M32 12L8 22L32 32L56 22L32 12Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M16 26V36C16 36 20 42 32 42C44 42 48 36 48 36V26" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M56 22V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        
+                        <!-- Paper/document -->
+                        <rect x="22" y="34" width="20" height="24" rx="2" fill="white" opacity="0.95"/>
+                        <line x1="26" y1="40" x2="38" y2="40" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="26" y1="44" x2="38" y2="44" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="26" y1="48" x2="35" y2="48" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                        
+                        <!-- Checkmark -->
+                        <circle cx="44" cy="48" r="10" fill="#4CAF50"/>
+                        <path d="M40 48L42.5 51L48 45" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+                <h1>TOPCIT Buddy</h1>
+                <p class="tagline">Master Your IT Certification Journey</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="loginUsername" name="username" placeholder="Enter your username" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" id="toggleLoginPassword">
+                            <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="eye-off-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    <span class="btn-content">
+                        <span id="loginBtnText">Login</span>
+                    </span>
+                </button>
+                
+                <div class="toggle-link">
+                    Don't have an account? <a href="#" id="showSignup">Sign Up</a>
+                </div>
+                
+                <div id="loginErrorMsg" class="error-message"></div>
+            </form>
+            
+            <!-- Signup Form -->
+            <form id="signupForm" class="signup-form" style="display: none;">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="signupUsername" name="username" placeholder="Choose a username" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="signupPassword" name="password" placeholder="Choose a password" required>
+                        <button type="button" class="toggle-password" id="toggleSignupPassword">
+                            <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="eye-off-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                            <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <svg class="eye-off-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="signupBtn">
+                    <span class="btn-content">
+                        <span id="signupBtnText">Sign Up</span>
+                    </span>
+                </button>
+                
+                <div class="toggle-link">
+                    Already have an account? <a href="#" id="showLogin">Login</a>
+                </div>
+                
+                <div id="signupErrorMsg" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Password toggle functionality for login
+        function setupPasswordToggle(toggleId, inputId) {
+            const toggle = document.getElementById(toggleId);
+            const input = document.getElementById(inputId);
+            const eyeIcon = toggle.querySelector('.eye-icon');
+            const eyeOffIcon = toggle.querySelector('.eye-off-icon');
+
+            toggle.addEventListener('click', function() {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                
+                if (type === 'text') {
+                    eyeIcon.style.display = 'none';
+                    eyeOffIcon.style.display = 'block';
+                } else {
+                    eyeIcon.style.display = 'block';
+                    eyeOffIcon.style.display = 'none';
+                }
+            });
+        }
+
+        setupPasswordToggle('toggleLoginPassword', 'loginPassword');
+        setupPasswordToggle('toggleSignupPassword', 'signupPassword');
+        setupPasswordToggle('toggleConfirmPassword', 'confirmPassword');
+
+        // Toggle between login and signup forms
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const showSignup = document.getElementById('showSignup');
+        const showLogin = document.getElementById('showLogin');
+
+        showSignup.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+            document.getElementById('loginErrorMsg').classList.remove('show');
+        });
+
+        showLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+            document.getElementById('signupErrorMsg').classList.remove('show');
+        });
+
+        // Signup function
+        function signup(username, password, confirmPassword) {
+            if (username.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+                return { success: false, message: 'All fields are required.' };
+            }
+
+            if (password !== confirmPassword) {
+                return { success: false, message: 'Passwords do not match.' };
+            }
+
+            if (password.length < 6) {
+                return { success: false, message: 'Password must be at least 6 characters long.' };
+            }
+
+            // Check if username already exists
+            const users = JSON.parse(localStorage.getItem('topcit_users') || '{}');
+            if (users[username.trim()]) {
+                return { success: false, message: 'Username already exists.' };
+            }
+
+            // Store user credentials
+            users[username.trim()] = {
+                password: password, // In a real app, hash the password
+                createdAt: new Date().toISOString()
+            };
+            localStorage.setItem('topcit_users', JSON.stringify(users));
+
+            // Initialize user data
+            const userData = {
+                memberSince: new Date().toISOString(),
+                totalQuestions: 0,
+                correctAnswers: 0,
+                testsCompleted: 0,
+                examsCompleted: 0,
+                studyTime: 0,
+                topicPerformance: {},
+                difficultyPerformance: {
+                    beginner: { correct: 0, total: 0 },
+                    average: { correct: 0, total: 0 },
+                    advanced: { correct: 0, total: 0 }
+                },
+                testHistory: [],
+                achievements: [],
+                certificates: [],
+                dailyChallenge: {
+                    lastAttempt: null,
+                    streak: 0,
+                    history: []
+                },
+                streaks: {
+                    current: 0,
+                    longest: 0,
+                    lastActivity: null
+                }
+            };
+            localStorage.setItem('topcit_user_data', JSON.stringify(userData));
+
+            // Log the user in
+            localStorage.setItem('topcit_logged_in', 'true');
+            localStorage.setItem('topcit_username', username.trim());
+
+            return { success: true };
+        }
+
+        // Login function
+        function login(username, password) {
+            if (username.trim() === '' || password.trim() === '') {
+                return { success: false, message: 'Please enter a valid username and password.' };
+            }
+
+            // Check credentials
+            const users = JSON.parse(localStorage.getItem('topcit_users') || '{}');
+            if (users[username.trim()] && users[username.trim()].password === password) {
+                localStorage.setItem('topcit_logged_in', 'true');
+                localStorage.setItem('topcit_username', username.trim());
+                
+                // Initialize user data if not present
+                if (!localStorage.getItem('topcit_user_data')) {
+                    const userData = {
+                        memberSince: new Date().toISOString(),
+                        totalQuestions: 0,
+                        correctAnswers: 0,
+                        testsCompleted: 0,
+                        examsCompleted: 0,
+                        studyTime: 0,
+                        topicPerformance: {},
+                        difficultyPerformance: {
+                            beginner: { correct: 0, total: 0 },
+                            average: { correct: 0, total: 0 },
+                            advanced: { correct: 0, total: 0 }
+                        },
+                        testHistory: [],
+                        achievements: [],
+                        certificates: [],
+                        dailyChallenge: {
+                            lastAttempt: null,
+                            streak: 0,
+                            history: []
+                        },
+                        streaks: {
+                            current: 0,
+                            longest: 0,
+                            lastActivity: null
+                        }
+                    };
+                    localStorage.setItem('topcit_user_data', JSON.stringify(userData));
+                }
+                
+                return { success: true };
+            }
+            
+            return { success: false, message: 'Invalid username or password.' };
+        }
+
+        // Login form submission
+        const loginBtn = document.getElementById('loginBtn');
+        const loginBtnText = document.getElementById('loginBtnText');
+        const loginBtnContent = loginBtn.querySelector('.btn-content');
+        const loginErrorMsg = document.getElementById('loginErrorMsg');
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Show loading state
+            loginBtn.disabled = true;
+            loginBtnContent.innerHTML = '<div class="spinner"></div><span>Logging in...</span>';
+            loginErrorMsg.classList.remove('show');
+            
+            setTimeout(function() {
+                const result = login(username, password);
+                if (result.success) {
+                    window.location.href = 'dashboard.html';
+                } else {
+                    loginErrorMsg.textContent = result.message;
+                    loginErrorMsg.classList.add('show');
+                    loginBtn.disabled = false;
+                    loginBtnContent.innerHTML = '<span>Login</span>';
+                }
+            }, 800);
+        });
+
+        // Signup form submission
+        const signupBtn = document.getElementById('signupBtn');
+        const signupBtnText = document.getElementById('signupBtnText');
+        const signupBtnContent = signupBtn.querySelector('.btn-content');
+        const signupErrorMsg = document.getElementById('signupErrorMsg');
+
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Show loading state
+            signupBtn.disabled = true;
+            signupBtnContent.innerHTML = '<div class="spinner"></div><span>Signing up...</span>';
+            signupErrorMsg.classList.remove('show');
+            
+            setTimeout(function() {
+                const result = signup(username, password, confirmPassword);
+                if (result.success) {
+                    window.location.href = 'dashboard.html';
+                } else {
+                    signupErrorMsg.textContent = result.message;
+                    signupErrorMsg.classList.add('show');
+                    signupBtn.disabled = false;
+                    signupBtnContent.innerHTML = '<span>Sign Up</span>';
+                }
+            }, 800);
+        });
+    </script>
+</body>
+</html>

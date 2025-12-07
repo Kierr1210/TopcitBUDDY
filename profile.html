@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TOPCIT Buddy</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2196F3;
+            --secondary-blue: #64B5F6;
+            --dark-blue: #1565C0;
+            --light-blue: #E3F2FD;
+            --darker-blue: #0D47A1;
+            --success-green: #4CAF50;
+            --warning-orange: #FF9800;
+            --danger-red: #F44336;
+            --purple: #9C27B0;
+            --teal-blue-start: #00695C;
+            --teal-blue-end: #0288D1;
+            --text-dark: #212121;
+            --text-gray: #757575;
+            --bg-light: #F5F7FA;
+            --white: #FFFFFF;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+            --shadow-xl: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #F5F7FA 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: var(--white);
+            padding: 20px 40px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .logo-small {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-small:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a.active {
+            color: var(--white);
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+
+        .nav-menu a.highlight {
+            color: var(--primary-blue);
+            box-shadow: inset 0 0 0 2px var(--primary-blue), 0 2px 8px rgba(33, 150, 243, 0.2);
+            font-weight: 600;
+        }
+
+        .nav-menu a#logoutBtn {
+            color: var(--danger-red);
+            box-shadow: inset 0 0 0 2px var(--danger-red), 0 2px 8px rgba(244, 67, 54, 0.2);
+        }
+
+        .nav-menu a#logoutBtn:hover {
+            color: var(--danger-red);
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 3px;
+            background: var(--dark-blue);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Container */
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .profile-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-avatar svg {
+            width: 80px;
+            height: 80px;
+        }
+
+        .profile-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-info h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .profile-info p {
+            font-size: 17px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .edit-btn {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: none;
+            padding: 18px 32px;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: auto;
+            box-shadow: var(--shadow);
+            z-index: 2;
+        }
+
+        .edit-btn:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Profile Stats Row */
+        .profile-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .stat-icon.blue {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            color: var(--primary-blue);
+        }
+
+        .stat-icon.green {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            color: var(--success-green);
+        }
+
+        .stat-icon.orange {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            color: var(--warning-orange);
+        }
+
+        .stat-icon.purple {
+            background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+            color: var(--purple);
+        }
+
+        .stat-info h3 {
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .stat-info p {
+            color: var(--text-gray);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 32px;
+            animation: slideUp 0.6s ease;
+        }
+
+        .section-card h2 {
+            font-size: 28px;
+            color: var(--dark-blue);
+            margin-bottom: 32px;
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .no-data {
+            color: var(--text-gray);
+            font-style: italic;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 24px;
+            background: var(--white);
+            padding: 20px 28px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+            min-width: 320px;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+            animation: slideUp 0.3s ease;
+        }
+
+        .notification.success {
+            border-left-color: var(--success-green);
+        }
+
+        .notification.error {
+            border-left-color: var(--danger-red);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            max-width: 600px;
+            width: 90%;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-content h2 {
+            font-size: 28px;
+            color: var(--dark-blue);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .modal-content label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-content input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .icon-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            background: var(--bg-light);
+            border: 2px solid #E0E0E0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .icon-option svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .icon-option:hover {
+            border-color: var(--primary-blue);
+            background: var(--light-blue);
+            transform: scale(1.1);
+        }
+
+        .icon-option.selected {
+            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+
+        .icon-option.selected svg {
+            fill: var(--white);
+            stroke: var(--white);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 18px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn.save {
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            color: var(--white);
+        }
+
+        .modal-btn.cancel {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 2px solid #E0E0E0;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .profile-container {
+                max-width: 800px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 20px;
+                flex-wrap: wrap;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 16px;
+                padding: 20px 0;
+                background: var(--white);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: var(--shadow-lg);
+                animation: slideIn 0.3s ease;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 12px 16px;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px;
+            }
+
+            .profile-info h1 {
+                font-size: 32px;
+            }
+
+            .profile-info p {
+                font-size: 16px;
+            }
+
+            .edit-btn {
+                padding: 16px 24px;
+                font-size: 16px;
+            }
+
+            .profile-stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 24px;
+            }
+
+            .modal-content {
+                padding: 24px;
+            }
+
+            .modal-content h2 {
+                font-size: 24px;
+            }
+
+            .modal-btn {
+                padding: 16px 24px;
+                font-size: 16px;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+                gap: 12px;
+            }
+
+            .icon-option {
+                width: 60px;
+                height: 60px;
+            }
+
+            .icon-option svg {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 16px 16px;
+            }
+
+            .profile-container {
+                padding: 24px 16px;
+            }
+
+            .profile-header {
+                padding: 24px 16px;
+            }
+
+            .profile-info h1 {
+                font-size: 28px;
+            }
+
+            .profile-info p {
+                font-size: 15px;
+            }
+
+            .edit-btn {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+
+            .stat-card {
+                padding: 24px 16px;
+            }
+
+            .section-card {
+                padding: 24px;
+            }
+
+            .section-card h2 {
+                font-size: 24px;
+            }
+
+            .modal-content {
+                padding: 24px 16px;
+            }
+
+            .modal-content h2 {
+                font-size: 22px;
+            }
+
+            .modal-btn {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .profile-container {
+                max-width: 1300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-small">
+                <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+                    <path d="M32 12L8 22L32 32L56 22L32 12Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M16 26V36C16 36 20 42 32 42C44 42 48 36 48 36V26" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M56 22V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <rect x="22" y="34" width="20" height="24" rx="2" fill="white" opacity="0.95"/>
+                    <line x1="26" y1="40" x2="38" y2="40" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="26" y1="44" x2="38" y2="44" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="26" y1="48" x2="35" y2="48" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="44" cy="48" r="10" fill="#4CAF50"/>
+                    <path d="M40 48L42.5 51L48 45" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+            <span>TOPCIT Buddy</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="dashboard.html" class="highlight">Dashboard</a>
+            <a href="progress.html">Progress</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="flashcards.html">Flashcards</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar" id="profileAvatar"></div>
+            <div class="profile-info">
+                <h1 id="profileName">Ali</h1>
+                <p>TOPCIT Certification Candidate</p>
+                <p style="margin-top: 8px; opacity: 0.8;">Member since <span id="memberSince"></span></p>
+            </div>
+            <button class="edit-btn" id="editProfileBtn">Edit Profile</button>
+        </div>
+
+        <div class="profile-stats-row">
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalAttempted">0</h3>
+                    <p>Total Questions</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3 id="overallAccuracy">0%</h3>
+                    <p>Overall Accuracy</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3 id="testsCompleted">0</h3>
+                    <p>Tests Completed</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalTime">0h</h3>
+                    <p>Total Study Time</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>Recent Activity</h2>
+            <div id="recentActivity">
+                <p class="no-data">No recent activity</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>Best Performance</h2>
+            <div class="stats-grid" style="margin-top: 20px;">
+                <div style="padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                    <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 8px;">Best Exam Score</p>
+                    <h3 style="font-size: 32px; color: var(--success-green);" id="bestExam">-</h3>
+                </div>
+                <div style="padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                    <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 8px;">Best Quiz Score</p>
+                    <h3 style="font-size: 32px; color: var(--success-green);" id="bestQuiz">-</h3>
+                </div>
+                <div style="padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                    <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 8px;">Current Streak</p>
+                    <h3 style="font-size: 32px; color: var(--warning-orange);" id="streak">0 days</h3>
+                </div>
+                <div style="padding: 20px; background: var(--bg-light); border-radius: 12px;">
+                    <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 8px;">Longest Streak</p>
+                    <h3 style="font-size: 32px; color: var(--primary-blue);" id="longestStreak">0 days</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="editProfileModal">
+        <div class="modal-content">
+            <h2>Edit Profile</h2>
+            <div class="form-group">
+                <label for="editUsername">Username</label>
+                <input type="text" id="editUsername" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label>Select Profile Icon</label>
+                <div class="icon-grid">
+                    <div class="icon-option" data-icon="grad-cap">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M22 10L12 7l-10 3v4c0 4 10 7 10 7s10-3 10-7v-4z" fill="var(--primary-blue)"/>
+                            <path d="M6 12v5c0 2 3 4 6 4s6-2 6-4v-5" stroke="var(--white)" stroke-width="2"/>
+                            <path d="M9 18l2 2 4-4" stroke="var(--success-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="user">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="star">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="book">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="rocket">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2m-3.5-6.5l13-13"/>
+                            <path d="M22 2s-8 3-10 5-2 6-2 6"/>
+                            <circle cx="9" cy="9" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="globe">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10m0-20a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="shield">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="controller">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <rect x="2" y="6" width="20" height="12" rx="4"/>
+                            <circle cx="8" cy="12" r="1"/>
+                            <circle cx="12" cy="12" r="1"/>
+                            <path d="M16 10h2m-2 2h2m-2 2h2"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="pixel-heart">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M4 10h4v4H4zM8 6h4v4H8zM12 4h4v4h-4zM16 6h4v4h-4zM12 10h4v4h-4zM8 14h4v4H8zM4 14h4v4H4z"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="music">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M9 18V5l12-2v13"/>
+                            <circle cx="6" cy="18" r="3"/>
+                            <circle cx="18" cy="16" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="laptop">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M4 17h16v2H4z"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="lightbulb">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M9 21h6m-6 0v-2a6 6 0 1 1 6 0v2m-3-10v4"/>
+                            <circle cx="12" cy="8" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="code">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="puzzle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M4 7h6a2 2 0 1 0-4-4v4zm0 10h6a2 2 0 1 1-4 4v-4zm16-10h-6a2 2 0 1 0 4-4v4zm0 10h-6a2 2 0 1 1 4 4v-4z"/>
+                        </svg>
+                    </div>
+                    <div class="icon-option" data-icon="brain">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2">
+                            <path d="M9 3a6 6 0 0 0-6 6v6a6 6 0 0 0 6 6c1 0 2-.5 3-1.5 1 1 2 1.5 3 1.5a6 6 0 0 0 6-6V9a6 6 0 0 0-6-6c-1 0-2 .5-3 1.5-1-1-2-1.5-3-1.5z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn save" id="saveProfileBtn">Save</button>
+                <button class="modal-btn cancel" id="cancelEditBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Authentication
+        function isAuthenticated() {
+            return localStorage.getItem('topcit_logged_in') === 'true';
+        }
+
+        function logout() {
+            localStorage.removeItem('topcit_logged_in');
+            localStorage.removeItem('topcit_username');
+            window.location.href = 'index.html';
+        }
+
+        // User Data Management
+        function getUserData() {
+            const data = localStorage.getItem('topcit_user_data');
+            return data ? JSON.parse(data) : {
+                memberSince: new Date().toISOString(),
+                totalQuestions: 0,
+                correctAnswers: 0,
+                testsCompleted: 0,
+                studyTime: 0,
+                testHistory: [],
+                streaks: { current: 0, longest: 0 }
+            };
+        }
+
+        // Notification
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            if (notification) {
+                notification.textContent = message;
+                notification.className = `notification show ${type}`;
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        // Profile Icon Management
+        const ICONS = {
+            'grad-cap': `<svg viewBox="0 0 24 24" fill="none"><path d="M22 10L12 7l-10 3v4c0 4 10 7 10 7s10-3 10-7v-4z" fill="var(--primary-blue)"/><path d="M6 12v5c0 2 3 4 6 4s6-2 6-4v-5" stroke="var(--white)" stroke-width="2"/><path d="M9 18l2 2 4-4" stroke="var(--success-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+            'user': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+            'star': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+            'book': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+            'rocket': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2m-3.5-6.5l13-13"/><path d="M22 2s-8 3-10 5-2 6-2 6"/><circle cx="9" cy="9" r="2"/></svg>`,
+            'globe': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10m0-20a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg>`,
+            'shield': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+            'controller': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="4"/><circle cx="8" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><path d="M16 10h2m-2 2h2m-2 2h2"/></svg>`,
+            'pixel-heart': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M4 10h4v4H4zM8 6h4v4H8zM12 4h4v4h-4zM16 6h4v4h-4zM12 10h4v4h-4zM8 14h4v4H8zM4 14h4v4H4z"/></svg>`,
+            'music': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+            'laptop': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M4 17h16v2H4z"/></svg>`,
+            'lightbulb': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M9 21h6m-6 0v-2a6 6 0 1 1 6 0v2m-3-10v4"/><circle cx="12" cy="8" r="4"/></svg>`,
+            'code': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>`,
+            'puzzle': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M4 7h6a2 2 0 1 0-4-4v4zm0 10h6a2 2 0 1 1-4 4v-4zm16-10h-6a2 2 0 1 0 4-4v4zm0 10h-6a2 2 0 1 1 4 4v-4z"/></svg>`,
+            'brain': `<svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)" stroke-width="2"><path d="M9 3a6 6 0 0 0-6 6v6a6 6 0 0 0 6 6c1 0 2-.5 3-1.5 1 1 2 1.5 3 1.5a6 6 0 0 0 6-6V9a6 6 0 0 0-6-6c-1 0-2 .5-3 1.5-1-1-2-1.5-3-1.5z"/></svg>`
+        };
+
+        // Load Profile
+        function loadProfile() {
+            try {
+                const userData = getUserData();
+                const userName = localStorage.getItem('topcit_username') || 'Ali';
+                const selectedIcon = localStorage.getItem('topcit_profile_icon') || 'grad-cap';
+
+                document.getElementById('profileName').textContent = userName;
+                document.getElementById('profileAvatar').innerHTML = ICONS[selectedIcon] || ICONS['grad-cap'];
+
+                const memberDate = new Date(userData.memberSince);
+                document.getElementById('memberSince').textContent = memberDate.toLocaleDateString();
+
+                document.getElementById('totalAttempted').textContent = userData.totalQuestions;
+
+                const accuracy = userData.totalQuestions > 0
+                    ? Math.round((userData.correctAnswers / userData.totalQuestions) * 100)
+                    : 0;
+                document.getElementById('overallAccuracy').textContent = accuracy + '%';
+
+                document.getElementById('testsCompleted').textContent = userData.testsCompleted;
+
+                const hours = Math.floor(userData.studyTime / 3600);
+                const minutes = Math.floor((userData.studyTime % 3600) / 60);
+                document.getElementById('totalTime').textContent = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+
+                const examTests = userData.testHistory.filter(t => t.type === 'exam');
+                const quizTests = userData.testHistory.filter(t => t.type === 'quiz');
+
+                const bestExam = examTests.length > 0 ? Math.max(...examTests.map(t => t.score)) : 0;
+                const bestQuiz = quizTests.length > 0 ? Math.max(...quizTests.map(t => t.score)) : 0;
+
+                document.getElementById('bestExam').textContent = bestExam > 0 ? bestExam + '%' : '-';
+                document.getElementById('bestQuiz').textContent = bestQuiz > 0 ? bestQuiz + '%' : '-';
+
+                document.getElementById('streak').textContent = userData.streaks.current + ' days';
+                document.getElementById('longestStreak').textContent = userData.streaks.longest + ' days';
+
+                const activityContainer = document.getElementById('recentActivity');
+                if (userData.testHistory.length > 0) {
+                    activityContainer.innerHTML = userData.testHistory.slice(0, 5).map(test => {
+                        const date = new Date(test.date);
+                        return `
+                            <div style="padding: 16px; background: var(--bg-light); border-radius: 10px; margin-bottom: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <strong>${test.type === 'exam' ? 'TOPCIT Exam' : test.type === 'quiz' ? 'Fast Quiz' : test.type === 'daily' ? 'Daily Challenge' : 'Practice Test'}</strong>
+                                        <p style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">
+                                            ${date.toLocaleString()}
+                                        </p>
+                                    </div>
+                                    <div style="font-size: 24px; font-weight: 700; color: ${test.score >= 80 ? 'var(--success-green)' : test.score >= 60 ? 'var(--warning-orange)' : 'var(--danger-red)'};">
+                                        ${test.score}%
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            } catch (error) {
+                console.error('Error loading profile:', error);
+                showNotification('Failed to load profile data', 'error');
+            }
+        }
+
+        // Edit Profile Functionality
+        function openEditModal() {
+            try {
+                console.log('Opening edit modal');
+                const modal = document.getElementById('editProfileModal');
+                const usernameInput = document.getElementById('editUsername');
+                const iconOptions = document.querySelectorAll('.icon-option');
+                const currentUsername = localStorage.getItem('topcit_username') || 'Ali';
+                const currentIcon = localStorage.getItem('topcit_profile_icon') || 'grad-cap';
+
+                if (!modal || !usernameInput || !iconOptions.length) {
+                    console.error('Modal elements not found');
+                    showNotification('Failed to open edit modal', 'error');
+                    return;
+                }
+
+                usernameInput.value = currentUsername;
+                iconOptions.forEach(option => {
+                    option.classList.remove('selected');
+                    if (option.dataset.icon === currentIcon) {
+                        option.classList.add('selected');
+                    }
+                });
+
+                modal.style.display = 'flex';
+            } catch (error) {
+                console.error('Error opening edit modal:', error);
+                showNotification('Failed to open edit modal', 'error');
+            }
+        }
+
+        function saveProfile() {
+            try {
+                const usernameInput = document.getElementById('editUsername');
+                const selectedIcon = document.querySelector('.icon-option.selected')?.dataset.icon;
+                const newUsername = usernameInput.value.trim();
+
+                if (!newUsername) {
+                    showNotification('Username cannot be empty', 'error');
+                    return;
+                }
+
+                if (!selectedIcon) {
+                    showNotification('Please select a profile icon', 'error');
+                    return;
+                }
+
+                localStorage.setItem('topcit_username', newUsername);
+                localStorage.setItem('topcit_profile_icon', selectedIcon);
+                document.getElementById('profileName').textContent = newUsername;
+                document.getElementById('profileAvatar').innerHTML = ICONS[selectedIcon];
+                document.getElementById('editProfileModal').style.display = 'none';
+                showNotification('Profile updated successfully', 'success');
+            } catch (error) {
+                console.error('Error saving profile:', error);
+                showNotification('Failed to save profile', 'error');
+            }
+        }
+
+        // Check authentication
+        if (!isAuthenticated()) {
+            window.location.href = 'index.html';
+        }
+
+        // Event Listeners
+        try {
+            const editProfileBtn = document.getElementById('editProfileBtn');
+            if (editProfileBtn) {
+                editProfileBtn.addEventListener('click', () => {
+                    console.log('Edit Profile button clicked');
+                    openEditModal();
+                });
+            } else {
+                console.error('Edit Profile button not found');
+                showNotification('Edit Profile button not found', 'error');
+            }
+
+            const saveProfileBtn = document.getElementById('saveProfileBtn');
+            if (saveProfileBtn) {
+                saveProfileBtn.addEventListener('click', saveProfile);
+            } else {
+                console.error('Save Profile button not found');
+            }
+
+            const cancelEditBtn = document.getElementById('cancelEditBtn');
+            if (cancelEditBtn) {
+                cancelEditBtn.addEventListener('click', () => {
+                    console.log('Cancel button clicked');
+                    document.getElementById('editProfileModal').style.display = 'none';
+                });
+            } else {
+                console.error('Cancel Edit button not found');
+            }
+
+            const iconOptions = document.querySelectorAll('.icon-option');
+            if (iconOptions.length > 0) {
+                iconOptions.forEach(option => {
+                    option.addEventListener('click', () => {
+                        console.log(`Icon selected: ${option.dataset.icon}`);
+                        iconOptions.forEach(opt => opt.classList.remove('selected'));
+                        option.classList.add('selected');
+                    });
+                });
+            } else {
+                console.error('No icon options found');
+            }
+
+            document.getElementById('logoutBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                logout();
+            });
+        } catch (error) {
+            console.error('Error setting up event listeners:', error);
+            showNotification('Failed to initialize event listeners', 'error');
+        }
+
+        // Load profile data
+        loadProfile();
+    </script>
+</body>
+</html>

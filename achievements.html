@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - TOPCIT Buddy</title>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uhu17cmcht");
+    </script>
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #2196F3;
+    --secondary-blue: #64B5F6;
+    --dark-blue: #1565C0;
+    --light-blue: #E3F2FD;
+    --darker-blue: #0D47A1;
+    --success-green: #4caf50;
+    --warning-orange: #ff9800;
+    --danger-red: #f44336;
+    --purple: #9c27b0;
+    --text-dark: #212121;
+    --text-gray: #757575;
+    --bg-light: #f5f7fa;
+    --white: #ffffff;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+    --shadow-xl: 0 8px 32px rgba(0,0,0,0.2);
+    --teal-blue-start: #00695C;
+    --teal-blue-end: #0288D1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #E3F2FD 0%, #f5f7fa 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.navbar {
+    background: var(--white);
+    padding: 20px 40px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.logo-small {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.logo-small:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-blue);
+    background: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    color: var(--white);
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.nav-menu a.highlight {
+    color: var(--primary-blue);
+    box-shadow: inset 0 0 0 2px var(--primary-blue), 0 2px 8px rgba(33, 150, 243, 0.2);
+    font-weight: 600;
+}
+
+.nav-menu a.active,
+.nav-menu a.active.highlight {
+    color: white !important;
+}
+
+.nav-menu a#logoutBtn {
+    color: var(--danger-red);
+    box-shadow: inset 0 0 0 2px var(--danger-red), 0 2px 8px rgba(244, 67, 54, 0.2);
+}
+.nav-menu a#logoutBtn:hover {
+    color: var(--danger-red);
+    background: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background: var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    animation: fadeIn 0.6s ease;
+}
+
+.welcome-section {
+    margin-bottom: 40px;
+    animation: slideUp 0.6s ease;
+}
+
+.welcome-section h1 {
+    font-size: 42px;
+    color: var(--dark-blue);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--text-gray);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.stat-icon.purple {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    color: var(--purple);
+}
+
+.stat-icon.blue {
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    color: var(--primary-blue);
+}
+
+.stat-info h3 {
+    font-size: 36px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.stat-info p {
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.section-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+    animation: slideUp 0.6s ease;
+}
+
+.section-card h2 {
+    font-size: 28px;
+    color: var(--dark-blue);
+    margin-bottom: 32px;
+    font-weight: 700;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.achievement-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e0e0e0, #e0e0e0);
+    transition: background 0.3s ease;
+}
+
+.achievement-card.unlocked {
+    opacity: 1;
+}
+
+.achievement-card.unlocked::before {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+}
+
+.achievement-card.unlocked:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.achievement-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card.unlocked .achievement-icon {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    animation: bounce 2s ease-in-out infinite;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+}
+
+.achievement-card h3 {
+    font-size: 20px;
+    color: var(--dark-blue);
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.achievement-card p {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.achievement-date {
+    font-size: 12px;
+    color: var(--text-gray);
+    font-style: italic;
+    text-align: center;
+    font-weight: 500;
+}
+
+.achievement-card.unlocked .achievement-date {
+    color: var(--success-green);
+    font-weight: 600;
+}
+
+.certificates-section {
+    margin-top: 48px;
+    display: none;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.certificate-card {
+    background: linear-gradient(135deg, #fff8e1 0%, #fffde7 100%);
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid #FFD700;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-card::before {
+    content: '🏆';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 120px;
+    opacity: 0.1;
+}
+
+.certificate-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.certificate-card h3 {
+    font-size: 22px;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.certificate-score {
+    font-size: 18px;
+    color: var(--success-green);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.certificate-date {
+    font-size: 14px;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+@media (max-width: 968px) {
+    .achievements-grid,
+    .certificates-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+        padding: 20px 0;
+        background: var(--white);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: var(--shadow-lg);
+        animation: slideIn 0.3s ease;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 12px 16px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 24px 16px;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .section-card {
+        padding: 24px;
+    }
+
+    .section-card h2 {
+        font-size: 24px;
+    }
+
+    .achievements-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card,
+    .certificate-card {
+        padding: 24px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-small">
+                <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+                    <path d="M32 12L8 22L32 32L56 22L32 12Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M16 26V36C16 36 20 42 32 42C44 42 48 36 48 36V26" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M56 22V34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <rect x="22" y="34" width="20" height="24" rx="2" fill="white" opacity="0.95"/>
+                    <line x1="26" y1="40" x2="38" y2="40" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="26" y1="44" x2="38" y2="44" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="26" y1="48" x2="35" y2="48" stroke="#2196F3" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="44" cy="48" r="10" fill="#4CAF50"/>
+                    <path d="M40 48L42.5 51L48 45" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+            <span>TOPCIT Buddy</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="dashboard.html" class="highlight">Dashboard</a>
+            <a href="progress.html">Progress</a>
+            <a href="achievements.html" class="active highlight">Achievements</a>
+            <a href="flashcards.html" >Flashcards</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="welcome-section">
+            <h1>🏆 Your Achievements</h1>
+            <p class="subtitle">Unlock badges by reaching milestones</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3 id="unlockedCount">0</h3>
+                    <p>Unlocked Achievements</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3 id="progressPercent">0%</h3>
+                    <p>Completion Progress</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🎖️ All Achievements</h2>
+            <div class="achievements-grid" id="achievementsGrid"></div>
+        </div>
+        
+        <div class="certificates-section section-card" id="certificatesSection">
+            <h2>🏆 Your Daily Challenge Certificates</h2>
+            <div class="certificates-grid" id="certificatesGrid"></div>
+        </div>
+    </div>
+    
+    <script>
+        if (localStorage.getItem('topcit_logged_in') !== 'true') {
+            window.location.href = 'index.html';
+        }
+        
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('topcit_logged_in');
+            localStorage.removeItem('topcit_username');
+            window.location.href = 'index.html';
+        });
+        
+        function getUserData() {
+            const data = localStorage.getItem('topcit_user_data');
+            return data ? JSON.parse(data) : null;
+        }
+        
+        const ACHIEVEMENTS_LIST = [
+            { id: 'first_test', name: 'Getting Started', description: 'Complete your first test', icon: '🎯', condition: (data) => data.testsCompleted >= 1 },
+            { id: 'perfect_score', name: 'Perfect Score', description: 'Score 100% on any test', icon: '💯', condition: (data) => data.testHistory.some(t => t.score === 100) },
+            { id: 'dedicated', name: 'Dedicated Learner', description: 'Complete 10 tests', icon: '📚', condition: (data) => data.testsCompleted >= 10 },
+            { id: 'expert', name: 'Subject Expert', description: 'Complete 25 tests', icon: '🏆', condition: (data) => data.testsCompleted >= 25 },
+            { id: 'quick_thinker', name: 'Quick Thinker', description: 'Complete a quiz in under 3 minutes', icon: '⚡', condition: (data) => data.testHistory.some(t => t.type === 'quiz' && t.timeSpent < 180) },
+            { id: 'topic_master', name: 'Topic Master', description: 'Score 100% in any topic', icon: '🎓', condition: (data) => Object.values(data.topicPerformance).some(t => t.total >= 5 && (t.correct / t.total) === 1) },
+            { id: 'consistency', name: 'Consistent Performer', description: 'Score above 80% in 5 tests', icon: '⭐', condition: (data) => data.testHistory.filter(t => t.score >= 80).length >= 5 },
+            { id: 'century', name: 'Century Club', description: 'Answer 100 questions', icon: '💪', condition: (data) => data.totalQuestions >= 100 },
+            { id: 'accuracy', name: 'Sharp Mind', description: 'Maintain 90% overall accuracy', icon: '🧠', condition: (data) => data.totalQuestions >= 20 && (data.correctAnswers / data.totalQuestions) >= 0.9 },
+            { id: 'marathon', name: 'Marathon Runner', description: 'Study for 2+ hours total', icon: '🏃', condition: (data) => data.studyTime >= 7200 },
+            { id: 'all_topics', name: 'Well-Rounded', description: 'Attempt questions from all topics', icon: '🌟', condition: (data) => Object.keys(data.topicPerformance).length >= 11 },
+            { id: 'exam_ace', name: 'Exam Ace', description: 'Complete a full TOPCIT exam', icon: '🎖️', condition: (data) => data.testHistory.some(t => t.type === 'exam') },
+        ];
+        
+        function loadAchievements() {
+            const userData = getUserData();
+            const unlockedCount = userData.achievements.length;
+            const totalCount = ACHIEVEMENTS_LIST.length;
+            const progressPercent = Math.round((unlockedCount / totalCount) * 100);
+            
+            document.getElementById('unlockedCount').textContent = `${unlockedCount}/${totalCount}`;
+            document.getElementById('progressPercent').textContent = progressPercent + '%';
+            
+            const grid = document.getElementById('achievementsGrid');
+            grid.innerHTML = ACHIEVEMENTS_LIST.map(achievement => {
+                const isUnlocked = userData.achievements.includes(achievement.id);
+                return `
+                    <div class="achievement-card ${isUnlocked ? 'unlocked' : ''}">
+                        <div class="achievement-icon">${achievement.icon}</div>
+                        <h3>${achievement.name}</h3>
+                        <p>${achievement.description}</p>
+                        ${isUnlocked ? '<div class="achievement-date">Unlocked!</div>' : '<div class="achievement-date">🔒 Locked</div>'}
+                    </div>
+                `;
+            }).join('');
+            
+            if (userData.certificates && userData.certificates.length > 0) {
+                const certificatesSection = document.getElementById('certificatesSection');
+                const certificatesGrid = document.getElementById('certificatesGrid');
+                
+                certificatesGrid.innerHTML = userData.certificates.map(cert => {
+                    const date = new Date(cert.date).toLocaleDateString();
+                    return `
+                        <div class="certificate-card">
+                            <div class="certificate-icon">🏆</div>
+                            <h3>Daily Challenge Certificate</h3>
+                            <p class="certificate-score">Score: ${cert.score}%</p>
+                            <div class="certificate-date">${date}</div>
+                        </div>
+                    `;
+                }).join('');
+                
+                certificatesSection.style.display = 'block';
+            }
+        }
+        
+        loadAchievements();
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
